@@ -2,9 +2,9 @@
 
 name: Crowdin Translation Integration
 
-on:
-  schedule:
-    - cron: '50 10 * * 5'  # Friday at 10:50 AM, UTC
+# on:
+  # schedule:
+    # - cron: '50 10 * * 5'  # Friday at 10:50 AM, UTC
 
 jobs:
   create_intl_file:
