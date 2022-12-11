@@ -2054,6 +2054,187 @@ static const unsigned short pixelshift_45_wish[] = {
 	PACK15_4(0x8BE5FF, 0x608FCF, 0x7550E8, 0x622E4C)
 };
 
+// Adding some custom palettes from Onion Team
+
+	// From Jeltron
+static const unsigned short Jeltron_Greenscale[] = {
+	PACK15_4(0xCCE38C, 0x8CCE5A, 0x427F39, 0x2B5934),
+	PACK15_4(0xCCE38C, 0x8CCE5A, 0x427F39, 0x2B5934),
+	PACK15_4(0xCCE38C, 0x8CCE5A, 0x427F39, 0x2B5934)
+};
+
+static const unsigned short Jeltron_GB_DMG[] = {
+	PACK15_4(0x868612, 0x557837, 0x335038, 0x1E3931),
+	PACK15_4(0x868612, 0x557837, 0x335038, 0x1E3931),
+	PACK15_4(0x868612, 0x557837, 0x335038, 0x1E3931)
+};
+
+	// from twb64 (Olywa selection)
+static const unsigned short Cheetos[] = {    //orange
+	PACK15_4(0xE57600, 0xAF5A00, 0x6B3700, 0x281400),
+	PACK15_4(0xE57600, 0xAF5A00, 0x6B3700, 0x281400),
+	PACK15_4(0xE57600, 0xAF5A00, 0x6B3700, 0x281400)
+};
+static const unsigned short Kingdom_Key_Gold[] = {    //GB
+	PACK15_4(0xCAAD32, 0x9A8426, 0x5F5117, 0x231E08),
+	PACK15_4(0xCAAD32, 0x9A8426, 0x5F5117, 0x231E08),
+	PACK15_4(0xCAAD32, 0x9A8426, 0x5F5117, 0x231E08)
+};
+
+static const unsigned short Pokemon_Pinball[] = {    //GB
+	PACK15_4(0xE8F8B8, 0xA0B050, 0x786030, 0x181820),
+	PACK15_4(0xE8F8B8, 0xA0B050, 0x786030, 0x181820),
+	PACK15_4(0xE8F8B8, 0xA0B050, 0x786030, 0x181820)
+};
+
+	// from twb64 (Schmurtz selection)
+
+static const unsigned short Classy_Christmas[] = {    //multicolor
+	PACK15_4(0xE8E7DF, 0x8BAB95, 0x9E5C5E, 0x534D57),
+	PACK15_4(0xE8E7DF, 0x8BAB95, 0x9E5C5E, 0x534D57),
+	PACK15_4(0xE8E7DF, 0x8BAB95, 0x9E5C5E, 0x534D57)
+};
+
+static const unsigned short Winter_Christmas[] = {    //multicolor
+	PACK15_4(0xDDDDDD, 0x65B08F, 0xAE3B40, 0x341113),
+	PACK15_4(0xDDDDDD, 0x65B08F, 0xAE3B40, 0x341113),
+	PACK15_4(0xDDDDDD, 0x65B08F, 0xAE3B40, 0x341113)
+};
+
+static const unsigned short Nightvision_Green[] = {    //inverted
+	PACK15_4(0x122108, 0x305916, 0x4E9223, 0x66BF2F),
+	PACK15_4(0x122108, 0x305916, 0x4E9223, 0x66BF2F),
+	PACK15_4(0x122108, 0x305916, 0x4E9223, 0x66BF2F)
+};
+
+static const unsigned short Funimation_Melon[] = {    //multicolor
+	PACK15_4(0x96FF00, 0xFF149F, 0x5B0BB5, 0x000000),
+	PACK15_4(0x96FF00, 0xFF149F, 0x5B0BB5, 0x000000),
+	PACK15_4(0x96FF00, 0xFF149F, 0x5B0BB5, 0x000000)
+};
+
+static const unsigned short Sky_Pop_Ivory[] = {    //GB
+	PACK15_4(0xE5E0B8, 0xBEBB95, 0x86825C, 0x525025),
+	PACK15_4(0xE5E0B8, 0xBEBB95, 0x86825C, 0x525025),
+	PACK15_4(0xE5E0B8, 0xBEBB95, 0x86825C, 0x525025)
+};
+
+static const unsigned short Virtual_Vision[] = {    // INVERTED
+	PACK15_4(0x1E0000, 0x780000, 0xC30000, 0xFF0000),
+	PACK15_4(0x1E0000, 0x780000, 0xC30000, 0xFF0000),
+	PACK15_4(0x1E0000, 0x780000, 0xC30000, 0xFF0000),
+};
+
+//////////////////////////////////////////////////////////////////
+
+
+static const unsigned short Champion_s_Tunic[] = {    	// multicolor
+	PACK15_4(0xE2DCB1, 0x009EDD, 0x875B40, 0x281B13),
+	PACK15_4(0xE2DCB1, 0x009EDD, 0x875B40, 0x281B13),
+	PACK15_4(0xE2DCB1, 0x009EDD, 0x875B40, 0x281B13)
+};
+
+static const unsigned short Bandai_Namco_Tricolor[] = {  // multicolor
+	PACK15_4(0xF6B700, 0xDF4F61, 0x0069B1, 0x001F35),
+	PACK15_4(0xF6B700, 0xDF4F61, 0x0069B1, 0x001F35),
+	PACK15_4(0xF6B700, 0xDF4F61, 0x0069B1, 0x001F35)
+};
+
+static const unsigned short Gold_Silver_and_Bronze[] = { // multicolor
+	PACK15_4(0xBEB049, 0x86949A, 0x996843, 0x2D1F14),
+	PACK15_4(0xBEB049, 0x86949A, 0x996843, 0x2D1F14),
+	PACK15_4(0xBEB049, 0x86949A, 0x996843, 0x2D1F14)
+};
+
+static const unsigned short Super_Famicom_Suprem[] = {   // multicolor
+	PACK15_4(0xFEDA5A, 0x44AC71, 0xD94040, 0x0846BA),
+	PACK15_4(0xFEDA5A, 0x44AC71, 0xD94040, 0x0846BA),
+	PACK15_4(0xFEDA5A, 0x44AC71, 0xD94040, 0x0846BA)
+};
+
+static const unsigned short Doraemon_Tricolor[] = {     // multicolor
+	PACK15_4(0xFFE800, 0x00A8F4, 0xE60000, 0x450000),
+	PACK15_4(0xFFE800, 0x00A8F4, 0xE60000, 0x450000),
+	PACK15_4(0xFFE800, 0x00A8F4, 0xE60000, 0x450000)
+};
+
+static const unsigned short Ryuuguu_Sunset[] = { 	    // multicolor yellow pink
+	PACK15_4(0xFFE43F, 0xFD99E1, 0x2681C8, 0x2B1039),
+	PACK15_4(0xFFE43F, 0xFD99E1, 0x2681C8, 0x2B1039),
+	PACK15_4(0xFFE43F, 0xFD99E1, 0x2681C8, 0x2B1039)
+};
+
+static const unsigned short JPop_Idol_Sherbet[] = {	// multicolor pink blue
+	PACK15_4(0xF19DB5, 0x5BBEE5, 0x812990, 0x260C2B),
+	PACK15_4(0xF19DB5, 0x5BBEE5, 0x812990, 0x260C2B),
+	PACK15_4(0xF19DB5, 0x5BBEE5, 0x812990, 0x260C2B)
+};
+
+static const unsigned short Perfect_Majin_Emperor[] = { // multicolor salmon purple
+	PACK15_4(0xFDC1BF, 0xA3B453, 0x8550A9, 0x271832),
+	PACK15_4(0xFDC1BF, 0xA3B453, 0x8550A9, 0x271832),
+	PACK15_4(0xFDC1BF, 0xA3B453, 0x8550A9, 0x271832)
+};
+
+// static const unsigned short Ultra_Black[] = {  			// unicolor dark
+// 	PACK15_4(0x4D5263, 0x3A3E4B, 0x24262E, 0x0D0E11),
+// 	PACK15_4(0x4D5263, 0x3A3E4B, 0x24262E, 0x0D0E11),
+// 	PACK15_4(0x4D5263, 0x3A3E4B, 0x24262E, 0x0D0E11)
+// };
+
+// static const unsigned short NHK_Silver_Gray[] = {  		// unicolor dark
+// 	PACK15_4(0x808080, 0x616161, 0x3C3C3C, 0x161616),
+// 	PACK15_4(0x808080, 0x616161, 0x3C3C3C, 0x161616),
+// 	PACK15_4(0x808080, 0x616161, 0x3C3C3C, 0x161616)
+// };
+
+// static const unsigned short Steam_Gray[] = {  			// unicolor dark
+// 	PACK15_4(0xC5C3C0, 0x969592, 0x5C5B5A, 0x222221),
+// 	PACK15_4(0xC5C3C0, 0x969592, 0x5C5B5A, 0x222221),
+// 	PACK15_4(0xC5C3C0, 0x969592, 0x5C5B5A, 0x222221)
+// };
+
+static const unsigned short Advanced_Indigo[] = { 		// mono Powerful purple
+	PACK15_4(0x796ABA, 0x5C518E, 0x383157, 0x151220),
+	PACK15_4(0x796ABA, 0x5C518E, 0x383157, 0x151220),
+	PACK15_4(0x796ABA, 0x5C518E, 0x383157, 0x151220)
+};
+
+
+static const unsigned short Vulnerable_Blue[] = { 		// INVERTED BLUE
+	PACK15_4(0x3732FF, 0x785647, 0xC38C73, 0xFFB897),
+	PACK15_4(0x3732FF, 0x785647, 0xC38C73, 0xFFB897),
+	PACK15_4(0x3732FF, 0x785647, 0xC38C73, 0xFFB897)
+};
+
+static const unsigned short Hogwarts_Goldius[] = {		// unicolor MARRON 
+	PACK15_4(0xB6A571, 0x8B7E56, 0x554D35, 0x201D13),
+	PACK15_4(0xB6A571, 0x8B7E56, 0x554D35, 0x201D13),
+	PACK15_4(0xB6A571, 0x8B7E56, 0x554D35, 0x201D13)
+};
+
+static const unsigned short Teyvat_Brown[] = { 			// unicolor MARRON
+	PACK15_4(0xB89469, 0x8C7150, 0x564531, 0x201A12),
+	PACK15_4(0xB89469, 0x8C7150, 0x564531, 0x201A12),
+	PACK15_4(0xB89469, 0x8C7150, 0x564531, 0x201A12)
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #undef PACK15_4
 #undef PACK15_1
 #undef TO5BIT
@@ -2357,7 +2538,47 @@ static const GbcPaletteEntry gbcDirPalettes[] = {
 	{ "PixelShift 43 - Vaporwave", pixelshift_43_vaporwave },
 	{ "PixelShift 44 - Virtual Boy", pixelshift_44_virtual_boy },
 	{ "PixelShift 45 - Wish", pixelshift_45_wish },
+	// Adding some custom palettes from Onion Team
+		// From Jeltron
+	{ "Jeltron Greenscale", Jeltron_Greenscale },    //GB
+	{ "Jeltron GB-DMG", Jeltron_GB_DMG },            //GB
+		// from twb64 (Olywa selection)
+	{ "Cheetos", Cheetos }, //orange
+	{ "Kingdom Key Gold", Kingdom_Key_Gold },    //Yellow
+	{ "Pokemon Pinball", Pokemon_Pinball },    //GB
+		// from twb64 (Schmurtz selection)
+	{ "Classy Christmas", Classy_Christmas },  //multicolor
+	{ "Winter Christmas", Winter_Christmas },  //multicolor
+	{ "Nightvision Green", Nightvision_Green },    //inverted
+	{ "Funimation Melon", Funimation_Melon },   //multicolor
+	{ "Sky Pop Ivory", Sky_Pop_Ivory },   //GB
+	{ "Virtual Vision", Virtual_Vision },    //inverted
+///////////////////////////////////////////////////////////////////
+	{ "champion s tunic", Champion_s_Tunic },
+	{ "bandai namco tricolor", Bandai_Namco_Tricolor },
+	{ "Gold Silver and Bronze", Gold_Silver_and_Bronze },
+	{ "Super Famicom Suprem", Super_Famicom_Suprem },
+	{ "Doraemon Tricolor", Doraemon_Tricolor },
+	{ "Ryuuguu Sunset", Ryuuguu_Sunset },
+	{ "JPop Idol Sherbet", JPop_Idol_Sherbet },
+	{ "Perfect Majin Emperor", Perfect_Majin_Emperor },
+	// { "Ultra Black", Ultra_Black },
+	// { "NHK Silver Gray", NHK_Silver_Gray },
+	// { "Steam Gray", Steam_Gray },
+	{ "Advanced Indigo", Advanced_Indigo },
+	{ "Vulnerable Blue", Vulnerable_Blue },
+	{ "Hogwarts Goldius", Hogwarts_Goldius },
+	{ "Teyvat Brown", Teyvat_Brown },
+
+
+
+
+
 };
+
+
+
+
 
 static const GbcPaletteEntry gbcTitlePalettes[] = {
 	{ "ALLEY WAY", p008 },
@@ -2604,3 +2825,4 @@ static const unsigned short *findGbcPal(const char *const title)
 }
 
 }
+

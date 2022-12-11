@@ -345,7 +345,7 @@ static unsigned palette_switch_counter = 0;
 
 /* Period in frames between palette switches
  * when holding RetroPad L/R */
-#define PALETTE_SWITCH_PERIOD 30
+#define PALETTE_SWITCH_PERIOD 15
 
 /* Note: These must be updated if the internal
  * palette options in libretro_core_options.h
@@ -355,23 +355,54 @@ static unsigned palette_switch_counter = 0;
  *   overheads and seems futile given that
  *   a number of other parameters must be
  *   hardcoded anyway... */
-#define NUM_PALETTES_DEFAULT       51
-#define NUM_PALETTES_TWB64_1      100
-#define NUM_PALETTES_TWB64_2      100
-#define NUM_PALETTES_PIXELSHIFT_1  45
-#define NUM_PALETTES_TOTAL        (NUM_PALETTES_DEFAULT + NUM_PALETTES_TWB64_1 + NUM_PALETTES_TWB64_2 + NUM_PALETTES_PIXELSHIFT_1)
+//#define NUM_PALETTES_DEFAULT       0
+#define NUM_PALETTES_REALISTIC_GB      21
+#define NUM_PALETTES_BLUE      8
+#define NUM_PALETTES_BROWN  5
+#define NUM_PALETTES_GRAY  9
+#define NUM_PALETTES_GREEN          17
+#define NUM_PALETTES_INVERTED             12
+#define NUM_PALETTES_MULTICOLOR           21
+#define NUM_PALETTES_ORANGE             9
+#define NUM_PALETTES_PINK             8
+#define NUM_PALETTES_PURPLE             10
+#define NUM_PALETTES_RED             6
+#define NUM_PALETTES_YELLOW             8
+#define NUM_PALETTES_OTHERS             127
+#define NUM_PALETTES_TOTAL  (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED + NUM_PALETTES_YELLOW + NUM_PALETTES_OTHERS)
 
-struct retro_core_option_value *palettes_default_opt_values      = NULL;
-struct retro_core_option_value *palettes_twb64_1_opt_values      = NULL;
-struct retro_core_option_value *palettes_twb64_2_opt_values      = NULL;
-struct retro_core_option_value *palettes_pixelshift_1_opt_values = NULL;
+//struct retro_core_option_value *palettes_default_opt_values      = NULL;
+struct retro_core_option_value *palettes_realistic_gb_opt_values      = NULL;
+struct retro_core_option_value *palettes_blue_opt_values      = NULL;
+struct retro_core_option_value *palettes_brown_opt_values      = NULL;
+struct retro_core_option_value *palettes_gray_opt_values      = NULL;
+struct retro_core_option_value *palettes_green_opt_values      = NULL;
+struct retro_core_option_value *palettes_inverted_opt_values      = NULL;
+struct retro_core_option_value *palettes_multicolor_opt_values      = NULL;
+struct retro_core_option_value *palettes_orange_opt_values      = NULL;
+struct retro_core_option_value *palettes_pink_opt_values      = NULL;
+struct retro_core_option_value *palettes_purple_opt_values      = NULL;
+struct retro_core_option_value *palettes_red_opt_values      = NULL;
+struct retro_core_option_value *palettes_yellow_opt_values      = NULL;
+struct retro_core_option_value *palettes_others_opt_values      = NULL;
+
 
 static const char *internal_palette_labels[NUM_PALETTES_TOTAL] = {0};
 
-static size_t *palettes_default_index_map      = NULL;
-static size_t *palettes_twb64_1_index_map      = NULL;
-static size_t *palettes_twb64_2_index_map      = NULL;
-static size_t *palettes_pixelshift_1_index_map = NULL;
+//static size_t *palettes_default_index_map      = NULL;
+static size_t *palettes_realistic_gb_index_map      = NULL;
+static size_t *palettes_blue_index_map      = NULL;
+static size_t *palettes_brown_index_map      = NULL;
+static size_t *palettes_gray_index_map      = NULL;
+static size_t *palettes_green_index_map      = NULL;
+static size_t *palettes_inverted_index_map      = NULL;
+static size_t *palettes_multicolor_index_map      = NULL;
+static size_t *palettes_orange_index_map      = NULL;
+static size_t *palettes_pink_index_map      = NULL;
+static size_t *palettes_purple_index_map      = NULL;
+static size_t *palettes_red_index_map      = NULL;
+static size_t *palettes_yellow_index_map      = NULL;
+static size_t *palettes_others_index_map      = NULL;
 
 static void parse_internal_palette_values(const char *key,
       struct retro_core_option_v2_definition *opt_defs_intl,
@@ -488,30 +519,86 @@ static void init_palette_switch(void)
 #endif
 
    /* Parse palette values for each palette group
-    * > Default palettes */
-   parse_internal_palette_values("gambatte_gb_internal_palette",
-         opt_defs_intl, NUM_PALETTES_DEFAULT,
+   /* > Realistic GB */
+   parse_internal_palette_values("gambatte_gb_palette_realistic_gb",
+         opt_defs_intl, NUM_PALETTES_REALISTIC_GB,
          0,
-         &palettes_default_opt_values,
-         &palettes_default_index_map);
-   /* > TWB64 Pack 1 palettes */
-   parse_internal_palette_values("gambatte_gb_palette_twb64_1",
-         opt_defs_intl, NUM_PALETTES_TWB64_1,
-         NUM_PALETTES_DEFAULT,
-         &palettes_twb64_1_opt_values,
-         &palettes_twb64_1_index_map);
-   /* > TWB64 Pack 2 palettes */
-   parse_internal_palette_values("gambatte_gb_palette_twb64_2",
-         opt_defs_intl, NUM_PALETTES_TWB64_2,
-         NUM_PALETTES_DEFAULT + NUM_PALETTES_TWB64_1,
-         &palettes_twb64_2_opt_values,
-         &palettes_twb64_2_index_map);
-   /* > PixelShift - Pack 1 palettes */
-   parse_internal_palette_values("gambatte_gb_palette_pixelshift_1",
-         opt_defs_intl, NUM_PALETTES_PIXELSHIFT_1,
-         NUM_PALETTES_DEFAULT + NUM_PALETTES_TWB64_1 + NUM_PALETTES_TWB64_2,
-         &palettes_pixelshift_1_opt_values,
-         &palettes_pixelshift_1_index_map);
+         &palettes_realistic_gb_opt_values,
+         &palettes_realistic_gb_index_map);
+   /* > Blue Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_blue",
+         opt_defs_intl, NUM_PALETTES_BLUE,
+         NUM_PALETTES_REALISTIC_GB,
+         &palettes_blue_opt_values,
+         &palettes_blue_index_map);
+   /* > Brown Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_brown",
+         opt_defs_intl, NUM_PALETTES_BROWN,
+         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE,
+         &palettes_brown_opt_values,
+         &palettes_brown_index_map);
+   /* > Gray Pack 2 palettes */
+   parse_internal_palette_values("gambatte_gb_palette_gray",
+         opt_defs_intl, NUM_PALETTES_GRAY,
+         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN,
+         &palettes_gray_opt_values,
+         &palettes_gray_index_map);
+   /* > Green Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_green",
+         opt_defs_intl, NUM_PALETTES_GREEN,
+         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY,
+         &palettes_green_opt_values,
+         &palettes_green_index_map);
+   /* > Inverted Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_inverted",
+         opt_defs_intl, NUM_PALETTES_INVERTED,
+         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN ,
+         &palettes_inverted_opt_values,
+         &palettes_inverted_index_map);
+   /* > Multicolor Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_multicolor",
+         opt_defs_intl, NUM_PALETTES_MULTICOLOR,
+         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED ,
+         &palettes_multicolor_opt_values,
+         &palettes_multicolor_index_map);
+   /* > Orange Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_orange",
+         opt_defs_intl, NUM_PALETTES_ORANGE,
+         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR ,
+         &palettes_orange_opt_values,
+         &palettes_orange_index_map);
+   /* > Pink Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_pink",
+         opt_defs_intl, NUM_PALETTES_PINK,
+         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE,
+         &palettes_pink_opt_values,
+         &palettes_pink_index_map);
+   /* > Purple Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_purple",
+         opt_defs_intl, NUM_PALETTES_PURPLE,
+         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK ,
+         &palettes_purple_opt_values,
+         &palettes_purple_index_map);
+   /* > Red Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_red",
+         opt_defs_intl, NUM_PALETTES_RED,
+         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE ,
+         &palettes_red_opt_values,
+         &palettes_red_index_map);
+   /* > Yellow Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_yellow",
+         opt_defs_intl, NUM_PALETTES_YELLOW,
+         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED ,
+         &palettes_yellow_opt_values,
+         &palettes_yellow_index_map);
+   /* > Others Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_others",
+         opt_defs_intl, NUM_PALETTES_OTHERS,
+         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED + NUM_PALETTES_YELLOW,
+         &palettes_others_opt_values,
+         &palettes_others_index_map);
+   
+
 }
 
 static void deinit_palette_switch(void)
@@ -521,15 +608,35 @@ static void deinit_palette_switch(void)
    internal_palette_active          = false;
    internal_palette_index           = 0;
    palette_switch_counter           = 0;
-   palettes_default_opt_values      = NULL;
-   palettes_twb64_1_opt_values      = NULL;
-   palettes_twb64_2_opt_values      = NULL;
-   palettes_pixelshift_1_opt_values = NULL;
 
-   RHMAP_FREE(palettes_default_index_map);
-   RHMAP_FREE(palettes_twb64_1_index_map);
-   RHMAP_FREE(palettes_twb64_2_index_map);
-   RHMAP_FREE(palettes_pixelshift_1_index_map);
+   palettes_realistic_gb_opt_values= NULL;
+   palettes_blue_opt_values= NULL;
+   palettes_brown_opt_values= NULL;
+   palettes_gray_opt_values= NULL;
+   palettes_green_opt_values= NULL;
+   palettes_inverted_opt_values= NULL;
+   palettes_multicolor_opt_values= NULL;
+   palettes_orange_opt_values= NULL;
+   palettes_pink_opt_values= NULL;
+   palettes_purple_opt_values= NULL;
+   palettes_red_opt_values= NULL;
+   palettes_yellow_opt_values= NULL;
+   palettes_others_opt_values= NULL;
+
+
+  RHMAP_FREE(palettes_realistic_gb_index_map);
+  RHMAP_FREE(palettes_blue_index_map);
+  RHMAP_FREE(palettes_brown_index_map);
+  RHMAP_FREE(palettes_gray_index_map);
+  RHMAP_FREE(palettes_green_index_map);
+  RHMAP_FREE(palettes_inverted_index_map);
+  RHMAP_FREE(palettes_multicolor_index_map);
+  RHMAP_FREE(palettes_orange_index_map);
+  RHMAP_FREE(palettes_pink_index_map);
+  RHMAP_FREE(palettes_purple_index_map);
+  RHMAP_FREE(palettes_red_index_map);
+  RHMAP_FREE(palettes_yellow_index_map);
+  RHMAP_FREE(palettes_others_index_map);
 }
 
 static void palette_switch_set_index(size_t palette_index)
@@ -539,49 +646,123 @@ static void palette_switch_set_index(size_t palette_index)
    const char *palettes_ext_value     = NULL;
    size_t opt_index                   = 0;
    struct retro_variable var          = {0};
+   int CurrentColorTotal              = 0;
 
    if (palette_index >= NUM_PALETTES_TOTAL)
       palette_index = NUM_PALETTES_TOTAL - 1;
 
-   /* Check which palette group the specified
-    * index corresponds to */
-   if (palette_index < NUM_PALETTES_DEFAULT)
+   /* Check which palette group the specified index corresponds to */
+   // if (palette_index < NUM_PALETTES_DEFAULT)
+   // {
+   //    /* This is a palette from the default group */
+   //    opt_index              = palette_index;
+   //    palettes_default_value = palettes_default_opt_values[opt_index].value;
+   // }
+   if (palette_index <   NUM_PALETTES_REALISTIC_GB)
    {
-      /* This is a palette from the default group */
-      opt_index              = palette_index;
-      palettes_default_value = palettes_default_opt_values[opt_index].value;
+      palettes_default_value = "Realistic GB";
+      opt_index              = palette_index ;
+      palettes_ext_key       = "gambatte_gb_palette_realistic_gb";
+      palettes_ext_value     = palettes_realistic_gb_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_REALISTIC_GB;
    }
-   else if (palette_index <
-         NUM_PALETTES_DEFAULT + NUM_PALETTES_TWB64_1)
+   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE)
    {
-      /* This is a palette from the TWB64 Pack 1 group */
-      palettes_default_value = "TWB64 - Pack 1";
+      palettes_default_value = "Blue";
+      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB);
+      palettes_ext_key       = "gambatte_gb_palette_blue";
+      palettes_ext_value     = palettes_blue_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_BLUE;
+   }
+   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN)
+   {
+      palettes_default_value = "Brown";
+      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE);
+      palettes_ext_key       = "gambatte_gb_palette_brown";
+      palettes_ext_value     = palettes_brown_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_BROWN;
+   }
+   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY )
+   {
+      palettes_default_value = "Gray";
+      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN);
+      palettes_ext_key       = "gambatte_gb_palette_gray";
+      palettes_ext_value     = palettes_gray_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_GRAY;
+   }
+   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN)
+   {
+      palettes_default_value = "Green";
+      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY);
+      palettes_ext_key       = "gambatte_gb_palette_green";
+      palettes_ext_value     = palettes_green_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_GREEN;
+   }
+   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED)
+   {
+      palettes_default_value = "Inverted";
+      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN);
+      palettes_ext_key       = "gambatte_gb_palette_inverted";
+      palettes_ext_value     = palettes_inverted_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_INVERTED;
+   }
+   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR)
+   {
+      palettes_default_value = "Multicolor";
+      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED);
+      palettes_ext_key       = "gambatte_gb_palette_multicolor";
+      palettes_ext_value     = palettes_multicolor_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_MULTICOLOR;
+   }
+   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE)
+   {
+      palettes_default_value = "Orange";
+      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR);
+      palettes_ext_key       = "gambatte_gb_palette_orange";
+      palettes_ext_value     = palettes_orange_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_ORANGE;
+   }
+   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK)
+   {
+      palettes_default_value = "Pink";
+      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE);
+      palettes_ext_key       = "gambatte_gb_palette_pink";
+      palettes_ext_value     = palettes_pink_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_PINK;
+   }
+   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE)
+   {
+      palettes_default_value = "Purple";
+      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK);
+      palettes_ext_key       = "gambatte_gb_palette_purple";
+      palettes_ext_value     = palettes_purple_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_PURPLE;
+   }
+   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED)
+   {
+      palettes_default_value = "Red";
+      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE);
+      palettes_ext_key       = "gambatte_gb_palette_red";
+      palettes_ext_value     = palettes_red_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_RED;
+   }
+   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED + NUM_PALETTES_YELLOW)
+   {
+      palettes_default_value = "Yellow";
+      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED);
+      palettes_ext_key       = "gambatte_gb_palette_yellow";
+      palettes_ext_value     = palettes_yellow_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_YELLOW;
+   }
+   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED + NUM_PALETTES_YELLOW + NUM_PALETTES_OTHERS)
+   {
+      palettes_default_value = "Others";
+      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED + NUM_PALETTES_YELLOW);
+      palettes_ext_key       = "gambatte_gb_palette_others";
+      palettes_ext_value     = palettes_others_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_OTHERS;
+   }
 
-      opt_index              = palette_index - NUM_PALETTES_DEFAULT;
-      palettes_ext_key       = "gambatte_gb_palette_twb64_1";
-      palettes_ext_value     = palettes_twb64_1_opt_values[opt_index].value;
-   }
-   else if (palette_index <
-         NUM_PALETTES_DEFAULT + NUM_PALETTES_TWB64_1 + NUM_PALETTES_TWB64_2)
-   {
-      /* This is a palette from the TWB64 Pack 2 group */
-      palettes_default_value = "TWB64 - Pack 2";
-
-      opt_index              = palette_index -
-            (NUM_PALETTES_DEFAULT + NUM_PALETTES_TWB64_1);
-      palettes_ext_key       = "gambatte_gb_palette_twb64_2";
-      palettes_ext_value     = palettes_twb64_2_opt_values[opt_index].value;
-   }
-   else
-   {
-      /* This is a palette from the PixelShift Pack 1 group */
-      palettes_default_value = "PixelShift - Pack 1";
-
-      opt_index              = palette_index -
-            (NUM_PALETTES_DEFAULT + NUM_PALETTES_TWB64_1 + NUM_PALETTES_TWB64_2);
-      palettes_ext_key       = "gambatte_gb_palette_pixelshift_1";
-      palettes_ext_value     = palettes_pixelshift_1_opt_values[opt_index].value;
-   }
 
    /* Notify frontend of option value changes */
    var.key   = "gambatte_gb_internal_palette";
@@ -598,13 +779,15 @@ static void palette_switch_set_index(size_t palette_index)
    /* Display notification message */
    if (libretro_msg_interface_version >= 1)
    {
+      char LongPaletteName[256];
+      snprintf(LongPaletteName, 256, "%s (%zu/%d) -  %s", palettes_default_value,opt_index+1, CurrentColorTotal, internal_palette_labels[palette_index]);
       struct retro_message_ext msg = {
-         internal_palette_labels[palette_index],
+         LongPaletteName,
          2000,
          1,
          RETRO_LOG_INFO,
          RETRO_MESSAGE_TARGET_OSD,
-         RETRO_MESSAGE_TYPE_NOTIFICATION_ALT,
+         RETRO_MESSAGE_TYPE_STATUS,
          -1
       };
       environ_cb(RETRO_ENVIRONMENT_SET_MESSAGE_EXT, &msg);
@@ -1975,10 +2158,10 @@ static void find_internal_palette(const unsigned short **palette, bool *is_gbc)
 
    if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
    {
-      // Handle TWB64 packs
-      if (string_is_equal(var.value, "TWB64 - Pack 1"))
+      // Handle color packs
+      if (string_is_equal(var.value, "Realistic GB"))
       {
-         var.key   = "gambatte_gb_palette_twb64_1";
+         var.key   = "gambatte_gb_palette_realistic_gb";
          var.value = NULL;
 
          if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
@@ -1986,50 +2169,173 @@ static void find_internal_palette(const unsigned short **palette, bool *is_gbc)
 
          // Determine 'consolidated' palette index
          if (palette_title)
-            index = RHMAP_GET_STR(palettes_twb64_1_index_map, palette_title);
+            index = RHMAP_GET_STR(palettes_realistic_gb_index_map, palette_title);
          if (index > 0)
             index--;
-         internal_palette_index = NUM_PALETTES_DEFAULT + index;
+         internal_palette_index = index;
       }
-      else if (string_is_equal(var.value, "TWB64 - Pack 2"))
+      else if (string_is_equal(var.value, "Blue"))
       {
-         var.key   = "gambatte_gb_palette_twb64_2";
+         var.key   = "gambatte_gb_palette_blue";
          var.value = NULL;
 
          if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
             palette_title = var.value;
-
-         // Determine 'consolidated' palette index
          if (palette_title)
-            index = RHMAP_GET_STR(palettes_twb64_2_index_map, palette_title);
+            index = RHMAP_GET_STR(palettes_blue_index_map, palette_title);
          if (index > 0)
             index--;
-         internal_palette_index = NUM_PALETTES_DEFAULT +
-               NUM_PALETTES_TWB64_1 + index;
+         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB;
       }
-      // Handle PixelShift packs
-      else if (string_is_equal(var.value, "PixelShift - Pack 1"))
+      else if (string_is_equal(var.value, "Brown"))
       {
-         var.key   = "gambatte_gb_palette_pixelshift_1";
+         var.key   = "gambatte_gb_palette_brown";
          var.value = NULL;
 
          if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
             palette_title = var.value;
-
-         // Determine 'consolidated' palette index
          if (palette_title)
-            index = RHMAP_GET_STR(palettes_pixelshift_1_index_map, palette_title);
+            index = RHMAP_GET_STR(palettes_brown_index_map, palette_title);
          if (index > 0)
             index--;
-         internal_palette_index = NUM_PALETTES_DEFAULT +
-               NUM_PALETTES_TWB64_1 + NUM_PALETTES_TWB64_2 + index;
+         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE;
+      }
+      else if (string_is_equal(var.value, "Gray"))
+      {
+         var.key   = "gambatte_gb_palette_gray";
+         var.value = NULL;
+
+         if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+            palette_title = var.value;
+         if (palette_title)
+            index = RHMAP_GET_STR(palettes_gray_index_map, palette_title);
+         if (index > 0)
+            index--;
+         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN;
+      }
+      else if (string_is_equal(var.value, "Green"))
+      {
+         var.key   = "gambatte_gb_palette_green";
+         var.value = NULL;
+
+         if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+            palette_title = var.value;
+         if (palette_title)
+            index = RHMAP_GET_STR(palettes_green_index_map, palette_title);
+         if (index > 0)
+            index--;
+         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY;
+      }
+      else if (string_is_equal(var.value, "Inverted"))
+      {
+         var.key   = "gambatte_gb_palette_inverted";
+         var.value = NULL;
+
+         if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+            palette_title = var.value;
+         if (palette_title)
+            index = RHMAP_GET_STR(palettes_inverted_index_map, palette_title);
+         if (index > 0)
+            index--;
+         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN;
+      }
+      else if (string_is_equal(var.value, "Multicolor"))
+      {
+         var.key   = "gambatte_gb_palette_multicolor";
+         var.value = NULL;
+
+         if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+            palette_title = var.value;
+         if (palette_title)
+            index = RHMAP_GET_STR(palettes_multicolor_index_map, palette_title);
+         if (index > 0)
+            index--;
+         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED;
+      }
+      else if (string_is_equal(var.value, "Orange"))
+      {
+         var.key   = "gambatte_gb_palette_orange";
+         var.value = NULL;
+
+         if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+            palette_title = var.value;
+         if (palette_title)
+            index = RHMAP_GET_STR(palettes_orange_index_map, palette_title);
+         if (index > 0)
+            index--;
+         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR;
+      }
+      else if (string_is_equal(var.value, "Pink"))
+      {
+         var.key   = "gambatte_gb_palette_pink";
+         var.value = NULL;
+
+         if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+            palette_title = var.value;
+         if (palette_title)
+            index = RHMAP_GET_STR(palettes_pink_index_map, palette_title);
+         if (index > 0)
+            index--;
+         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE;
+      }
+      else if (string_is_equal(var.value, "Purple"))
+      {
+         var.key   = "gambatte_gb_palette_purple";
+         var.value = NULL;
+
+         if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+            palette_title = var.value;
+         if (palette_title)
+            index = RHMAP_GET_STR(palettes_purple_index_map, palette_title);
+         if (index > 0)
+            index--;
+         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK;
+      }
+      else if (string_is_equal(var.value, "Red"))
+      {
+         var.key   = "gambatte_gb_palette_red";
+         var.value = NULL;
+
+         if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+            palette_title = var.value;
+         if (palette_title)
+            index = RHMAP_GET_STR(palettes_red_index_map, palette_title);
+         if (index > 0)
+            index--;
+         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE;
+      }
+      else if (string_is_equal(var.value, "Yellow"))
+      {
+         var.key   = "gambatte_gb_palette_yellow";
+         var.value = NULL;
+
+         if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+            palette_title = var.value;
+         if (palette_title)
+            index = RHMAP_GET_STR(palettes_yellow_index_map, palette_title);
+         if (index > 0)
+            index--;
+         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED;
+      }
+      else if (string_is_equal(var.value, "Others"))
+      {
+         var.key   = "gambatte_gb_palette_others";
+         var.value = NULL;
+
+         if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+            palette_title = var.value;
+         if (palette_title)
+            index = RHMAP_GET_STR(palettes_others_index_map, palette_title);
+         if (index > 0)
+            index--;
+         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED + NUM_PALETTES_YELLOW;
       }
       else
       {
          palette_title = var.value;
 
          // Determine 'consolidated' palette index
-         index = RHMAP_GET_STR(palettes_default_index_map, palette_title);
+         index = RHMAP_GET_STR(palettes_realistic_gb_index_map, palette_title);
          if (index > 0)
             index--;
          internal_palette_index = index;
@@ -2727,4 +3033,5 @@ void retro_run()
 }
 
 unsigned retro_api_version() { return RETRO_API_VERSION; }
+
 

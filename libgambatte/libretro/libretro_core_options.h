@@ -55,6 +55,11 @@ struct retro_core_option_v2_category option_cats_us[] = {
       "Game Link",
       "Change networked Game Link (multiplayer) settings."
    },
+   {
+      "gb_colors",
+      " > Color Groups",
+      "Choose a palette in the color group you have selected upside."
+   },
    { NULL, NULL, NULL },
 };
 
@@ -63,7 +68,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       "gambatte_gb_colorization",
       "GB Colorization",
       NULL,
-      "Enables colorization of Game Boy games. 'Auto' selects the 'best' (most colorful/appropriate) palette. 'GBC' selects game-specific Game Boy Color palette if defined, otherwise 'GBC - Dark Green'. 'SGB' selects game-specific Super Game Boy palette if defined, otherwise 'SGB - 1A'. 'Internal' uses 'Internal Palette' core option. 'Custom' loads user-created palette from system directory.",
+      "Enables colorization of Game Boy games. 'Auto' selects the 'best' (most colorful/appropriate) palette. 'GBC' selects game-specific Game Boy Color palette if defined, otherwise 'GBC - Dark Green'. 'SGB' selects game-specific Super Game Boy palette if defined, otherwise 'SGB - 1A'. 'internal / use color groups' uses 'Internal Palettes ordered by color groups' core option. 'Custom' loads user-created palette from system directory.",
       NULL,
       NULL,
       {
@@ -71,359 +76,582 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          { "auto",     "Auto" },
          { "GBC",      "GBC" },
          { "SGB",      "SGB" },
-         { "internal", "Internal" },
-         { "custom",   "Custom" },
+         { "internal", "internal / use color groups" },
+         { "custom",   "custom / external file" },
          { NULL, NULL },
       },
       "disabled"
    },
    {
       "gambatte_gb_internal_palette",
-      "Internal Palette",
+      "Current group color palette",
       NULL,
-      "Selects palette used for colorizing Game Boy games when 'GB Colorization' is set to 'Internal', or when 'GB Colorization' is set to 'Auto' and game has no pre-defined SGB/GBC palette. 'GB' palettes mimic the display of original Game Boy hardware. 'GBC' palettes are identical to the built-in presets of the Game Boy Color. 'SGB' palettes are identical to the built-in presets of the Super Game Boy.",
+      "Select the main palette color group you want then select a palette in the color group of your choice below.",
       NULL,
       NULL,
       {
-         { "GB - DMG",                 NULL },
-         { "GB - Pocket",              NULL },
-         { "GB - Light",               NULL },
-         { "GBC - Blue",               NULL },
-         { "GBC - Brown",              NULL },
-         { "GBC - Dark Blue",          NULL },
-         { "GBC - Dark Brown",         NULL },
-         { "GBC - Dark Green",         NULL },
-         { "GBC - Grayscale",          NULL },
-         { "GBC - Green",              NULL },
-         { "GBC - Inverted",           NULL },
-         { "GBC - Orange",             NULL },
-         { "GBC - Pastel Mix",         NULL },
-         { "GBC - Red",                NULL },
-         { "GBC - Yellow",             NULL },
-         { "SGB - 1A",                 NULL },
-         { "SGB - 1B",                 NULL },
-         { "SGB - 1C",                 NULL },
-         { "SGB - 1D",                 NULL },
-         { "SGB - 1E",                 NULL },
-         { "SGB - 1F",                 NULL },
-         { "SGB - 1G",                 NULL },
-         { "SGB - 1H",                 NULL },
-         { "SGB - 2A",                 NULL },
-         { "SGB - 2B",                 NULL },
-         { "SGB - 2C",                 NULL },
-         { "SGB - 2D",                 NULL },
-         { "SGB - 2E",                 NULL },
-         { "SGB - 2F",                 NULL },
-         { "SGB - 2G",                 NULL },
-         { "SGB - 2H",                 NULL },
-         { "SGB - 3A",                 NULL },
-         { "SGB - 3B",                 NULL },
-         { "SGB - 3C",                 NULL },
-         { "SGB - 3D",                 NULL },
-         { "SGB - 3E",                 NULL },
-         { "SGB - 3F",                 NULL },
-         { "SGB - 3G",                 NULL },
-         { "SGB - 3H",                 NULL },
-         { "SGB - 4A",                 NULL },
-         { "SGB - 4B",                 NULL },
-         { "SGB - 4C",                 NULL },
-         { "SGB - 4D",                 NULL },
-         { "SGB - 4E",                 NULL },
-         { "SGB - 4F",                 NULL },
-         { "SGB - 4G",                 NULL },
-         { "SGB - 4H",                 NULL },
-         { "Special 1",                NULL },
-         { "Special 2",                NULL },
-         { "Special 3",                NULL },
-         { "Special 4 (TI-83 Legacy)", NULL },
-         { "TWB64 - Pack 1",           NULL },
-         { "TWB64 - Pack 2",           NULL },
-         { "PixelShift - Pack 1",      NULL },
+         { "Realistic GB",     NULL },       
+         { "Blue",             NULL },
+         { "Brown",            NULL },
+         { "Gray",             NULL },
+         { "Green",            NULL },
+         { "Inverted",         NULL },
+         { "Multicolor",       NULL },
+         { "Orange",           NULL },
+         { "Pink",             NULL },
+         { "Purple",           NULL },
+         { "Red",              NULL },
+         { "Yellow",           NULL },
+         { "Others",           NULL },
          { NULL, NULL },
       },
-      "GB - DMG"
+      "Realistic GB"
    },
    {
-      "gambatte_gb_palette_twb64_1",
-      "> TWB64 - Pack 1 Palette",
+      "gambatte_gb_palette_realistic_gb",
+      "Realistic GB",
       NULL,
-      "Selects internal colorization palette when 'Internal Palette' is set to 'TWB64 - Pack 1'.",
+      "Select a palette when 'group color' is set to 'Realistic GB'.",
       NULL,
-      NULL,
+      "gb_colors",
       {
-         { "TWB64 001 - Aqours Blue",               NULL },
-         { "TWB64 002 - Anime Expo Ver.",           NULL },
-         { "TWB64 003 - SpongeBob Yellow",          NULL },
-         { "TWB64 004 - Patrick Star Pink",         NULL },
-         { "TWB64 005 - Neon Red",                  NULL },
-         { "TWB64 006 - Neon Blue",                 NULL },
-         { "TWB64 007 - Neon Yellow",               NULL },
-         { "TWB64 008 - Neon Green",                NULL },
-         { "TWB64 009 - Neon Pink",                 NULL },
-         { "TWB64 010 - Mario Red",                 NULL },
-         { "TWB64 011 - Nick Orange",               NULL },
-         { "TWB64 012 - Virtual Boy Ver.",          NULL },
-         { "TWB64 013 - Golden Wild",               NULL },
-         { "TWB64 014 - Builder Yellow",            NULL },
-         { "TWB64 015 - Classic Blurple",           NULL },
-         { "TWB64 016 - 765 Production Ver.",       NULL },
-         { "TWB64 017 - Superball Ivory",           NULL },
-         { "TWB64 018 - Crunchyroll Orange",        NULL },
-         { "TWB64 019 - Muse Pink",                 NULL },
-         { "TWB64 020 - Nijigasaki Yellow",         NULL },
-         { "TWB64 021 - Gamate Ver.",               NULL },
-         { "TWB64 022 - Greenscale Ver.",           NULL },
-         { "TWB64 023 - Odyssey Gold",              NULL },
-         { "TWB64 024 - Super Saiyan God",          NULL },
-         { "TWB64 025 - Super Saiyan Blue",         NULL },
-         { "TWB64 026 - Bizarre Pink",              NULL },
-         { "TWB64 027 - Nintendo Switch Lite Ver.", NULL },
-         { "TWB64 028 - Game.com Ver.",             NULL },
-         { "TWB64 029 - Sanrio Pink",               NULL },
-         { "TWB64 030 - BANDAI NAMCO Ver.",         NULL },
-         { "TWB64 031 - Cosmo Green",               NULL },
-         { "TWB64 032 - Wanda Pink",                NULL },
-         { "TWB64 033 - Link's Awakening DX Ver.",  NULL },
-         { "TWB64 034 - Travel Wood",               NULL },
-         { "TWB64 035 - Pokemon Ver.",              NULL },
-         { "TWB64 036 - Game Grump Orange",         NULL },
-         { "TWB64 037 - Scooby-Doo Mystery Ver.",   NULL },
-         { "TWB64 038 - Pokemon mini Ver.",         NULL },
-         { "TWB64 039 - Supervision Ver.",          NULL },
-         { "TWB64 040 - DMG Ver.",                  NULL },
-         { "TWB64 041 - Pocket Ver.",               NULL },
-         { "TWB64 042 - Light Ver.",                NULL },
-         { "TWB64 043 - Miraitowa Blue",            NULL },
-         { "TWB64 044 - Someity Pink",              NULL },
-         { "TWB64 045 - Pikachu Yellow",            NULL },
-         { "TWB64 046 - Eevee Brown",               NULL },
-         { "TWB64 047 - Microvision Ver.",          NULL },
-         { "TWB64 048 - TI-83 Ver.",                NULL },
-         { "TWB64 049 - Aegis Cherry",              NULL },
-         { "TWB64 050 - Labo Fawn",                 NULL },
-         { "TWB64 051 - MILLION LIVE GOLD!",        NULL },
-         { "TWB64 052 - Tokyo Midtown Ver.",        NULL },
-         { "TWB64 053 - VMU Ver.",                  NULL },
-         { "TWB64 054 - Game Master Ver.",          NULL },
-         { "TWB64 055 - Android Green",             NULL },
-         { "TWB64 056 - Ticketmaster Azure",        NULL },
-         { "TWB64 057 - Google Red",                NULL },
-         { "TWB64 058 - Google Blue",               NULL },
-         { "TWB64 059 - Google Yellow",             NULL },
-         { "TWB64 060 - Google Green",              NULL },
-         { "TWB64 061 - WonderSwan Ver.",           NULL },
-         { "TWB64 062 - Neo Geo Pocket Ver.",       NULL },
-         { "TWB64 063 - Dew Green",                 NULL },
-         { "TWB64 064 - Coca-Cola Red",             NULL },
-         { "TWB64 065 - GameKing Ver.",             NULL },
-         { "TWB64 066 - Do The Dew Ver.",           NULL },
-         { "TWB64 067 - Digivice Ver.",             NULL },
-         { "TWB64 068 - Bikini Bottom Ver.",        NULL },
-         { "TWB64 069 - Blossom Pink",              NULL },
-         { "TWB64 070 - Bubbles Blue",              NULL },
-         { "TWB64 071 - Buttercup Green",           NULL },
-         { "TWB64 072 - NASCAR Ver.",               NULL },
-         { "TWB64 073 - Lemon-Lime Green",          NULL },
-         { "TWB64 074 - Mega Man V Ver.",           NULL },
-         { "TWB64 075 - Tamagotchi Ver.",           NULL },
-         { "TWB64 076 - Phantom Red",               NULL },
-         { "TWB64 077 - Halloween Ver.",            NULL },
-         { "TWB64 078 - Christmas Ver.",            NULL },
-         { "TWB64 079 - Cardcaptor Pink",           NULL },
-         { "TWB64 080 - Pretty Guardian Gold",      NULL },
-         { "TWB64 081 - Camouflage Ver.",           NULL },
-         { "TWB64 082 - Legendary Super Saiyan",    NULL },
-         { "TWB64 083 - Super Saiyan Rose",         NULL },
-         { "TWB64 084 - Super Saiyan",              NULL },
-         { "TWB64 085 - Perfected Ultra Instinct",  NULL },
-         { "TWB64 086 - Saint Snow Red",            NULL },
-         { "TWB64 087 - Yellow Banana",             NULL },
-         { "TWB64 088 - Green Banana",              NULL },
-         { "TWB64 089 - Super Saiyan 3",            NULL },
-         { "TWB64 090 - Super Saiyan Blue Evolved", NULL },
-         { "TWB64 091 - Pocket Tales Ver.",         NULL },
-         { "TWB64 092 - Investigation Yellow",      NULL },
-         { "TWB64 093 - S.E.E.S. Blue",             NULL },
-         { "TWB64 094 - Game Awards Cyan",          NULL },
-         { "TWB64 095 - Hokage Orange",             NULL },
-         { "TWB64 096 - Straw Hat Red",             NULL },
-         { "TWB64 097 - Sword Art Cyan",            NULL },
-         { "TWB64 098 - Deku Alpha Emerald",        NULL },
-         { "TWB64 099 - Blue Stripes Ver.",         NULL },
-         { "TWB64 100 - Stone Orange",              NULL },
+         //realistic GB 
+         { "Jeltron GB-DMG",               NULL },            //GB
+         { "PixelShift 26 - GB Old",               NULL  },
+         { "GB - DMG",               NULL  },    // Original Game Boy
+         { "TWB64 022 - Greenscale Ver.",               NULL  },
+         { "PixelShift 24 - GB New",               NULL  },
+         { "PixelShift 19 - GB Backlight Yellow Dark",               NULL  },
+         { "TWB64 028 - Game.com Ver.",               NULL  },
+         { "PixelShift 03 - BGB 0.3 Emulator",               NULL  },
+         { "PixelShift 12 - Game Boy Pocket Alt",               NULL  },
+         { "TWB64 038 - Pokemon mini Ver.",               NULL  },
+         { "TWB64 041 - Pocket Ver.",                NULL  },
+         { "Sky Pop Ivory",          NULL   },   //GB
+         { "PixelShift 04 - Camouflage",               NULL  },
+         { "Hogwarts Goldius",             NULL   },	         // unicolor MARRON 
+         { "TWB64 135 - Paris Gold",               NULL  },
+         { "TWB64 017 - Superball Ivory",               NULL  },
+         { "TWB64 127 - Lime Midori",               NULL  },
+         { "Pokemon Pinball",          NULL   },    //GB
+         { "SGB - 4D",               NULL  },
+         { "SGB - 1B",               NULL  }, // (NB: don't think these
+         { "SGB - 1E",               NULL  }, // codes...)
          { NULL, NULL },
       },
-      "TWB64 001 - Aqours Blue"
+      "Jeltron GB-DMG"
    },
    {
-      "gambatte_gb_palette_twb64_2",
-      "> TWB64 - Pack 2 Palette",
+      "gambatte_gb_palette_blue",
+      "Blue",
       NULL,
-      "Selects internal colorization palette when 'Internal Palette' is set to 'TWB64 - Pack 2'.",
+      "Select a palette when 'group color' is set to 'Blue'.",
       NULL,
-      NULL,
+      "gb_colors",
       {
-         { "TWB64 101 - 765PRO Pink",               NULL },
-         { "TWB64 102 - CINDERELLA Blue",           NULL },
-         { "TWB64 103 - MILLION Yellow!",           NULL },
-         { "TWB64 104 - SideM Green",               NULL },
-         { "TWB64 105 - SHINY Sky Blue",            NULL },
-         { "TWB64 106 - Angry Volcano Ver.",        NULL },
-         { "TWB64 107 - Yo-kai Pink",               NULL },
-         { "TWB64 108 - Yo-kai Green",              NULL },
-         { "TWB64 109 - Yo-kai Blue",               NULL },
-         { "TWB64 110 - Yo-kai Purple",             NULL },
-         { "TWB64 111 - Aquatic Iro",               NULL },
-         { "TWB64 112 - Tea Midori",                NULL },
-         { "TWB64 113 - Sakura Pink",               NULL },
-         { "TWB64 114 - Wisteria Murasaki",         NULL },
-         { "TWB64 115 - Oni Aka",                   NULL },
-         { "TWB64 116 - Golden Kiiro",              NULL },
-         { "TWB64 117 - Silver Shiro",              NULL },
-         { "TWB64 118 - Fruity Orange",             NULL },
-         { "TWB64 119 - AKB48 Pink",                NULL },
-         { "TWB64 120 - Miku Blue",                 NULL },
-         { "TWB64 121 - Fairy Tail Red",            NULL },
-         { "TWB64 122 - Survey Corps Brown",        NULL },
-         { "TWB64 123 - Island Green",              NULL },
-         { "TWB64 124 - Mania Plus Green",          NULL },
-         { "TWB64 125 - Ninja Turtle Green",        NULL },
-         { "TWB64 126 - Slime Blue",                NULL },
-         { "TWB64 127 - Lime Midori",               NULL },
-         { "TWB64 128 - Ghostly Aoi",               NULL },
-         { "TWB64 129 - Retro Bogeda",              NULL },
-         { "TWB64 130 - Royal Blue",                NULL },
-         { "TWB64 131 - Neon Purple",               NULL },
-         { "TWB64 132 - Neon Orange",               NULL },
-         { "TWB64 133 - Moonlight Vision",          NULL },
-         { "TWB64 134 - Tokyo Red",                 NULL },
-         { "TWB64 135 - Paris Gold",                NULL },
-         { "TWB64 136 - Beijing Blue",              NULL },
-         { "TWB64 137 - Pac-Man Yellow",            NULL },
-         { "TWB64 138 - Irish Green",               NULL },
-         { "TWB64 139 - Kakarot Orange",            NULL },
-         { "TWB64 140 - Dragon Ball Orange",        NULL },
-         { "TWB64 141 - Christmas Gold",            NULL },
-         { "TWB64 142 - Pepsi-Cola Blue",           NULL },
-         { "TWB64 143 - Bubblun Green",             NULL },
-         { "TWB64 144 - Bobblun Blue",              NULL },
-         { "TWB64 145 - Baja Blast Storm",          NULL },
-         { "TWB64 146 - Olympic Gold",              NULL },
-         { "TWB64 147 - Value Orange",              NULL },
-         { "TWB64 148 - Liella Purple!",            NULL },
-         { "TWB64 149 - Olympic Silver",            NULL },
-         { "TWB64 150 - Olympic Bronze",            NULL },
-         { "TWB64 151 - ANA Sky Blue",              NULL },
-         { "TWB64 152 - Nijigasaki Orange",         NULL },
-         { "TWB64 153 - HoloBlue",                  NULL },
-         { "TWB64 154 - Wrestling Red",             NULL },
-         { "TWB64 155 - Yoshi Egg Green",           NULL },
-         { "TWB64 156 - Pokedex Red",               NULL },
-         { "TWB64 157 - Disney Dream Blue",         NULL },
-         { "TWB64 158 - Xbox Green",                NULL },
-         { "TWB64 159 - Sonic Mega Blue",           NULL },
-         { "TWB64 160 - G4 Orange",                 NULL },
-         { "TWB64 161 - Scarlett Green",            NULL },
-         { "TWB64 162 - Glitchy Blue",              NULL },
-         { "TWB64 163 - Classic LCD",               NULL },
-         { "TWB64 164 - 3DS Virtual Console Ver.",  NULL },
-         { "TWB64 165 - PocketStation Ver.",        NULL },
-         { "TWB64 166 - Game and Gold",             NULL },
-         { "TWB64 167 - Smurfy Blue",               NULL },
-         { "TWB64 168 - Swampy Ogre Green",         NULL },
-         { "TWB64 169 - Sailor Spinach Green",      NULL },
-         { "TWB64 170 - Shenron Green",             NULL },
-         { "TWB64 171 - Berserk Blood",             NULL },
-         { "TWB64 172 - Super Star Pink",           NULL },
-         { "TWB64 173 - Gamebuino Classic Ver.",    NULL },
-         { "TWB64 174 - Barbie Pink",               NULL },
-         { "TWB64 175 - Star Command Green",        NULL },
-         { "TWB64 176 - Nokia 3310 Ver.",           NULL },
-         { "TWB64 177 - Clover Green",              NULL },
-         { "TWB64 178 - Crash Orange",              NULL },
-         { "TWB64 179 - Famicom Disk Yellow",       NULL },
-         { "TWB64 180 - Team Rocket Red",           NULL },
-         { "TWB64 181 - SEIKO Timer Yellow",        NULL },
-         { "TWB64 182 - PINK109",                   NULL },
-         { "TWB64 183 - Doraemon Blue",             NULL },
-         { "TWB64 184 - Fury Blue",                 NULL },
-         { "TWB64 185 - Rockstar Orange",           NULL },
-         { "TWB64 186 - Puyo Puyo Green",           NULL },
-         { "TWB64 187 - Susan G. Pink",             NULL },
-         { "TWB64 188 - Pizza Hut Red",             NULL },
-         { "TWB64 189 - Plumbob Green",             NULL },
-         { "TWB64 190 - Grand Ivory",               NULL },
-         { "TWB64 191 - Demon's Gold",              NULL },
-         { "TWB64 192 - SEGA Tokyo Blue",           NULL },
-         { "TWB64 193 - Champion Blue",             NULL },
-         { "TWB64 194 - DK Barrel Brown",           NULL },
-         { "TWB64 195 - Evangelion Green",          NULL },
-         { "TWB64 196 - Equestrian Purple",         NULL },
-         { "TWB64 197 - Autobot Red",               NULL },
-         { "TWB64 198 - Niconico Sea Green",        NULL },
-         { "TWB64 199 - Duracell Copper",           NULL },
-         { "TWB64 200 - TOKYO SKYTREE CLOUDY BLUE", NULL },
+         { "TWB64 157 - Disney Dream Blue",                 NULL   },
+         { "TWB64 183 - Doraemon Blue",                 NULL   },
+         { "PixelShift 15 - GB Backlight Blue",                 NULL   },
+         { "TWB64 097 - Sword Art Cyan",                 NULL   },
+         { "TWB64 111 - Aquatic Iro",                 NULL   },
+         { "PixelShift 45 - Wish",                 NULL   },
+         { "TWB64 099 - Blue Stripes Ver.",                 NULL   },
+         { "TWB64 200 - TOKYO SKYTREE CLOUDY BLUE",                 NULL   },
          { NULL, NULL },
       },
-      "TWB64 101 - 765PRO Pink"
+      "TWB64 157 - Disney Dream Blue"
    },
    {
-      "gambatte_gb_palette_pixelshift_1",
-      "> PixelShift - Pack 1 Palette",
+      "gambatte_gb_palette_brown",
+      "Brown",
       NULL,
-      "Selects internal colorization palette when 'Internal Palette' is set to 'PixelShift - Pack 1'.",
+      "Select a palette when 'group color' is set to 'Brown'.",
       NULL,
-      NULL,
+      "gb_colors",
       {
-         { "PixelShift 01 - Arctic Green",               NULL },
-         { "PixelShift 02 - Arduboy",                    NULL },
-         { "PixelShift 03 - BGB 0.3 Emulator",           NULL },
-         { "PixelShift 04 - Camouflage",                 NULL },
-         { "PixelShift 05 - Chocolate Bar",              NULL },
-         { "PixelShift 06 - CMYK",                       NULL },
-         { "PixelShift 07 - Cotton Candy",               NULL },
-         { "PixelShift 08 - Easy Greens",                NULL },
-         { "PixelShift 09 - Gamate",                     NULL },
-         { "PixelShift 10 - Game Boy Light",             NULL },
-         { "PixelShift 11 - Game Boy Pocket",            NULL },
-         { "PixelShift 12 - Game Boy Pocket Alt",        NULL },
-         { "PixelShift 13 - Game Pocket Computer",       NULL },
-         { "PixelShift 14 - Game & Watch Ball",          NULL },
-         { "PixelShift 15 - GB Backlight Blue",          NULL },
-         { "PixelShift 16 - GB Backlight Faded",         NULL },
-         { "PixelShift 17 - GB Backlight Orange",        NULL },
-         { "PixelShift 18 - GB Backlight White ",        NULL },
-         { "PixelShift 19 - GB Backlight Yellow Dark",   NULL },
-         { "PixelShift 20 - GB Bootleg",                 NULL },
-         { "PixelShift 21 - GB Hunter",                  NULL },
-         { "PixelShift 22 - GB Kiosk",                   NULL },
-         { "PixelShift 23 - GB Kiosk 2",                 NULL },
-         { "PixelShift 24 - GB New",                     NULL },
-         { "PixelShift 25 - GB Nuked",                   NULL },
-         { "PixelShift 26 - GB Old",                     NULL },
-         { "PixelShift 27 - GBP Bivert",                 NULL },
-         { "PixelShift 28 - GB Washed Yellow Backlight", NULL },
-         { "PixelShift 29 - Ghost",                      NULL },
-         { "PixelShift 30 - Glow In The Dark",           NULL },
-         { "PixelShift 31 - Gold Bar",                   NULL },
-         { "PixelShift 32 - Grapefruit",                 NULL },
-         { "PixelShift 33 - Gray Green Mix",             NULL },
-         { "PixelShift 34 - Missingno",                  NULL },
-         { "PixelShift 35 - MS-Dos",                     NULL },
-         { "PixelShift 36 - Newspaper",                  NULL },
-         { "PixelShift 37 - Pip-Boy",                    NULL },
-         { "PixelShift 38 - Pocket Girl",                NULL },
-         { "PixelShift 39 - Silhouette",                 NULL },
-         { "PixelShift 40 - Sunburst",                   NULL },
-         { "PixelShift 41 - Technicolor",                NULL },
-         { "PixelShift 42 - Tron",                       NULL },
-         { "PixelShift 43 - Vaporwave",                  NULL },
-         { "PixelShift 44 - Virtual Boy",                NULL },
-         { "PixelShift 45 - Wish",                       NULL },
+         { "TWB64 194 - DK Barrel Brown",               NULL   },
+         { "TWB64 122 - Survey Corps Brown",               NULL   },
+         { "Teyvat Brown",             NULL   },		         // unicolor MARRON
+         { "TWB64 118 - Fruity Orange",               NULL   },
+         { "PixelShift 05 - Chocolate Bar",               NULL   },
          { NULL, NULL },
       },
-      "PixelShift 01 - Arctic Green"
+      "TWB64 194 - DK Barrel Brown"
    },
+   {
+      "gambatte_gb_palette_gray",
+      "Gray",
+      NULL,
+      "Select a palette when 'group color' is set to 'Gray'.",
+      NULL,
+      "gb_colors",
+      {
+         { "PixelShift 36 - Newspaper",                NULL  },
+         { "TWB64 047 - Microvision Ver.",                NULL  },
+         { "TWB64 085 - Perfected Ultra Instinct",                NULL  },
+         { "TWB64 075 - Tamagotchi Ver.",                NULL  },
+         { "TWB64 190 - Grand Ivory",                NULL  },
+         { "PixelShift 16 - GB Backlight Faded",                NULL  },
+         { "PixelShift 14 - Game & Watch Ball",               NULL  },
+         { "PixelShift 39 - Silhouette",                NULL  },
+         { "PixelShift 13 - Game Pocket Computer",               NULL   },
+         { NULL, NULL },
+      },
+      "PixelShift 36 - Newspaper"
+   },
+
+
+
+   {
+      "gambatte_gb_palette_green",
+      "Green",
+      NULL,
+      "Select a palette when 'group color' is set to 'Green'.",
+      NULL,
+      "gb_colors",
+      {
+            { "PixelShift 09 - Gamate",               NULL   },
+            { "TWB64 008 - Neon Green",               NULL   },
+            { "TWB64 161 - Scarlett Green",               NULL   },
+            { "TWB64 060 - Google Green",               NULL   },
+            { "TWB64 158 - Xbox Green",               NULL  },
+            { "TWB64 082 - Legendary Super Saiyan",               NULL  },
+            { "PixelShift 30 - Glow In The Dark",               NULL   },
+            { "TWB64 138 - Irish Green",               NULL   },
+            { "TWB64 039 - Supervision Ver.",               NULL   },
+            { "TWB64 065 - GameKing Ver.",               NULL   },
+            { "Jeltron Greenscale",         NULL },    //GB
+            { "SGB - 3H",               NULL  },
+            { "TWB64 073 - Lemon-Lime Green",               NULL   },
+            { "TWB64 091 - Pocket Tales Ver.",               NULL   },
+            { "TWB64 048 - TI-83 Ver.",                NULL  },
+            { "PixelShift 01 - Arctic Green",               NULL   },
+            { "TWB64 053 - VMU Ver.",               NULL   },
+         { NULL, NULL },
+      },
+      "PixelShift 09 - Gamate"
+   },
+   {
+      "gambatte_gb_palette_inverted",
+      "Inverted",
+      NULL,
+      "Select a palette when 'group color' is set to 'Inverted'.",
+      NULL,
+      "gb_colors",
+      {
+         { "PixelShift 37 - Pip-Boy",               NULL   },
+         { "PixelShift 35 - MS-Dos",               NULL   },
+         { "PixelShift 02 - Arduboy",               NULL   },
+         { "GBC - Inverted",               NULL   },   // B + Right
+         { "PixelShift 42 - Tron",               NULL   },
+         { "Nightvision Green",          NULL  },    //inverted
+         { "Virtual Vision",          NULL   },    //inverted
+         { "Vulnerable Blue",             NULL   },		      // INVERTED BLUE
+         { "SGB - 1G",               NULL   },
+         { "SGB - 2G",               NULL   },
+         { "SGB - 3G",               NULL   },
+         { "SGB - 4G",               NULL   },
+         { NULL, NULL },
+      },
+      "PixelShift 37 - Pip-Boy"
+   },
+   {
+      "gambatte_gb_palette_multicolor",
+      "Multicolor",
+      NULL,
+      "Select a palette when 'group color' is set to 'Multicolor'.",
+      NULL,
+      "gb_colors",
+      {
+
+
+
+
+
+         { "bandai namco tricolor",             NULL   },      // multicolor
+         { "Funimation Melon", NULL },   //multicolor
+         { "PixelShift 43 - Vaporwave",               NULL   },
+
+         { "TWB64 133 - Moonlight Vision",               NULL   },
+         { "champion s tunic",             NULL   },           // multicolor
+         { "TWB64 068 - Bikini Bottom Ver.",               NULL   },
+         { "TWB64 129 - Retro Bogeda",               NULL   },
+         { "Ryuuguu Sunset",             NULL   },             // multicolor yellow pink
+         { "GBC - Pastel Mix",               NULL   }, // Down
+
+         { "Super Famicom Suprem",             NULL   },       // multicolor
+         { "TWB64 072 - NASCAR Ver.",               NULL   },
+         { "Doraemon Tricolor",             NULL   },          // multicolor
+         { "TWB64 078 - Christmas Ver.",               NULL   },
+         { "Winter Christmas",          NULL   },  //multicolor
+         { "Classy Christmas",          NULL   },  //multicolor
+         { "SGB - 3A",               NULL   },
+
+         { "SGB - 4A",               NULL   },
+         { "PixelShift 07 - Cotton Candy",               NULL   },
+         { "PixelShift 38 - Pocket Girl",               NULL   },
+         { "SGB - 3C",               NULL   },
+         { "JPop Idol Sherbet",            NULL   },           // multicolor pink blue
+
+
+
+
+
+
+         //{ "Special 2",               NULL   },
+         { NULL, NULL },
+      },
+      "SGB - 4G"
+   },
+   {
+      "gambatte_gb_palette_orange",
+      "Orange",
+      NULL,
+      "Select a palette when 'group color' is set to 'Orange'.",
+      NULL,
+      "gb_colors",
+      {
+         { "Cheetos",         NULL },
+         { "TWB64 147 - Value Orange",               NULL   },
+         { "TWB64 018 - Crunchyroll Orange",               NULL   },
+         { "PixelShift 17 - GB Backlight Orange",               NULL   },
+         { "TWB64 020 - Nijigasaki Yellow",               NULL   },
+         { "GBC - Orange",               NULL   },     // A + Down
+         { "SGB - 2B",               NULL   },
+         { "SGB - 3E",               NULL   },
+         { "TWB64 081 - Camouflage Ver.",               NULL   },
+         { NULL, NULL },
+      },
+      "Cheetos"
+   },
+   {
+      "gambatte_gb_palette_pink",
+      "Pink",
+      NULL,
+      "Select a palette when 'group color' is set to 'Pink'.",
+      NULL,
+      "gb_colors",
+      {
+         { "TWB64 019 - Muse Pink",               NULL   },
+         { "TWB64 009 - Neon Pink",               NULL   },
+         { "TWB64 174 - Barbie Pink",               NULL   },
+         { "TWB64 187 - Susan G. Pink",               NULL   },
+         { "TWB64 004 - Patrick Star Pink",               NULL   },
+         { "TWB64 029 - Sanrio Pink",               NULL   },
+         { "TWB64 113 - Sakura Pink",               NULL   },
+         { "TWB64 079 - Cardcaptor Pink",               NULL   },
+         { NULL, NULL },
+      },
+      "TWB64 113 - Sakura Pink"
+   },
+   {
+      "gambatte_gb_palette_purple",
+      "Purple",
+      NULL,
+      "Select a palette when 'group color' is set to 'Purple'.",
+      NULL,
+      "gb_colors",
+      {
+         { "TWB64 130 - Royal Blue",                 NULL   },
+         { "TWB64 131 - Neon Purple",               NULL   },
+         { "TWB64 148 - Liella Purple!",               NULL   },
+         { "Advanced Indigo",             NULL   },            // unicolor Powerful purple
+         { "TWB64 196 - Equestrian Purple",               NULL   },
+         { "TWB64 110 - Yo-kai Purple",               NULL   },
+         { "PixelShift 18 - GB Backlight White ",  NULL   },
+         { "SGB - 4F",               NULL   },
+         { "SGB - 4C",               NULL   },
+         { "TWB64 114 - Wisteria Murasaki",               NULL   },
+         { NULL, NULL },
+      },
+      "Advanced Indigo"
+   },
+   {
+      "gambatte_gb_palette_red",
+      "Red",
+      NULL,
+      "Select a palette when 'group color' is set to 'Red'.",
+      NULL,
+      "gb_colors",
+      {
+         { "TWB64 076 - Phantom Red",               NULL   },
+         { "TWB64 171 - Berserk Blood",               NULL   },
+         { "TWB64 180 - Team Rocket Red",               NULL   },
+         { "TWB64 096 - Straw Hat Red",               NULL   },
+         { "TWB64 115 - Oni Aka",               NULL   },
+         { "SGB - 1F",               NULL   },
+         { NULL, NULL },
+      },
+      "TWB64 076 - Phantom Red"
+   },
+   {
+      "gambatte_gb_palette_yellow",
+      "Yellow",
+      NULL,
+      "Select a palette when 'group color' is set to 'Yellow'.",
+      NULL,
+      "gb_colors",
+      {
+         { "TWB64 087 - Yellow Banana",               NULL   },
+         { "TWB64 023 - Odyssey Gold",               NULL   },
+         { "Kingdom Key Gold",          NULL   },    
+         { "TWB64 014 - Builder Yellow",               NULL   },
+         { "TWB64 003 - SpongeBob Yellow",               NULL   },
+         { "TWB64 116 - Golden Kiiro",               NULL   },
+         { "PixelShift 31 - Gold Bar",               NULL   },
+         { "PixelShift 40 - Sunburst",               NULL   },
+        
+         { NULL, NULL },
+      },
+      "TWB64 087 - Yellow Banana"
+   },
+
+   /////////////////////////////////////===========================================================================================
+   {
+      "gambatte_gb_palette_others",
+      "Others",
+      NULL,
+      "Select a palette when 'group color' is set to 'Others'.",
+      NULL,
+      "gb_colors",
+      {
+         // Maximum 128 items
+
+         // realistic_gb
+               { "SGB - 4H",               NULL   },
+               { "TWB64 033 - Link's Awakening DX Ver.",               NULL   },
+               { "TWB64 071 - Buttercup Green",               NULL   },
+               { "TWB64 175 - Star Command Green",               NULL   },
+               //{ "TWB64 125 - Ninja Turtle Green",               NULL   },
+               { "TWB64 169 - Sailor Spinach Green",               NULL   },
+               //{ "TWB64 063 - Dew Green",               NULL   },
+               { "TWB64 155 - Yoshi Egg Green",               NULL   },
+               //{ "TWB64 108 - Yo-kai Green",               NULL   },
+               { "TWB64 013 - Golden Wild",               NULL   }, //green
+               //{ "TWB64 168 - Swampy Ogre Green",               NULL   },
+               { "TWB64 052 - Tokyo Midtown Ver.",               NULL   },
+               { "TWB64 040 - DMG Ver.",               NULL   },
+               //{ "TWB64 163 - Classic LCD",               NULL   },
+               { "TWB64 173 - Gamebuino Classic Ver.",               NULL   },
+               { "TWB64 176 - Nokia 3310 Ver.",               NULL   },
+               //{ "TWB64 167 - Smurfy Blue",               NULL   },
+               { "TWB64 090 - Super Saiyan Blue Evolved",               NULL   },
+               { "TWB64 144 - Bobblun Blue",               NULL   },
+               //{ "TWB64 109 - Yo-kai Blue",               NULL   },
+               //{ "TWB64 043 - Miraitowa Blue",               NULL   },
+               { "TWB64 001 - Aqours Blue",               NULL   },
+               //{ "TWB64 184 - Fury Blue",               NULL   },
+               //{ "TWB64 153 - HoloBlue",               NULL   },
+               //{ "TWB64 006 - Neon Blue",               NULL   },
+               //{ "TWB64 151 - ANA Sky Blue",               NULL   },
+               { "TWB64 193 - Champion Blue",               NULL   },
+               //{ "TWB64 093 - S.E.E.S. Blue",               NULL   },
+               //{ "TWB64 192 - SEGA Tokyo Blue",               NULL   },
+               //{ "TWB64 056 - Ticketmaster Azure",               NULL   },
+               //{ "TWB64 142 - Pepsi Cola Blue",               NULL   },
+               //{ "TWB64 159 - Sonic Mega Blue",               NULL   },
+               { "TWB64 058 - Google Blue",               NULL   },
+               { "TWB64 162 - Glitchy Blue",               NULL   },
+               //{ "TWB64 126 - Slime Blue",               NULL   },
+               //{ "TWB64 102 - CINDERELLA Blue",               NULL   },
+               { "TWB64 136 - Beijing Blue",               NULL   },
+               //{ "TWB64 120 - Miku Blue",               NULL   },
+               { "TWB64 025 - Super Saiyan Blue",               NULL   },
+               { "TWB64 198 - Niconico Sea Green",               NULL   },
+               { "GB - Light",               NULL   },  // Original Game Boy Light
+               { "TWB64 070 - Bubbles Blue",               NULL   },
+               { "TWB64 105 - SHINY Sky Blue",               NULL   },
+               //{ "TWB64 128 - Ghostly Aoi",               NULL   },
+               { "PixelShift 27 - GBP Bivert",               NULL   },
+               { "TWB64 074 - Mega Man V Ver.",               NULL   },
+               { "TWB64 015 - Classic Blurple",               NULL   },
+               { "TWB64 117 - Silver Shiro",               NULL   },
+               { "GB - Pocket",               NULL   }, // Original Game Boy Pocket	
+               { "TWB64 016 - 765 Production Ver.",               NULL   },
+               { "TWB64 054 - Game Master Ver.",               NULL   },
+               { "TWB64 165 - PocketStation Ver.",               NULL   },
+               { "PixelShift 21 - GB Hunter",               NULL   },
+               { "TWB64 149 - Olympic Silver",               NULL   },
+
+
+         // gray
+               { "TWB64 062 - Neo Geo Pocket Ver.",               NULL   }, // grey
+               { "TWB64 002 - Anime Expo Ver.",               NULL   },
+               { "GBC - Grayscale",               NULL   },  // B + Left
+               { "SGB - 2H",               NULL   },
+               //{ "TWB64 061 - WonderSwan Ver.",               NULL   },
+               { "TWB64 080 - Pretty Guardian Gold",               NULL   },
+               { "TWB64 164 - 3DS Virtual Console Ver.",               NULL   },
+               { "PixelShift 11 - Game Boy Pocket",               NULL   },
+               { "TWB64 067 - Digivice Ver.",               NULL   },// grey
+
+
+         // green
+               { "TWB64 195 - Evangelion Green",               NULL   },
+               { "PixelShift 28 - GB Washed Yellow Backlight",               NULL   },
+               { "TWB64 031 - Cosmo Green",               NULL   },
+               { "TWB64 170 - Shenron Green",               NULL   },
+               //{ "TWB64 177 - Clover Green",               NULL   },
+               { "TWB64 186 - Puyo Puyo Green",               NULL   },
+               { "TWB64 021 - Gamate Ver.",               NULL   }, // green
+               //{ "TWB64 088 - Green Banana",               NULL   },
+               { "PixelShift 08 - Easy Greens",               NULL   },
+               { "TWB64 143 - Bubblun Green",               NULL   },
+               { "PixelShift 22 - GB Kiosk",               NULL   },
+               //{ "TWB64 094 - Game Awards Cyan",               NULL   },
+               { "TWB64 098 - Deku Alpha Emerald",               NULL   },
+               { "TWB64 112 - Tea Midori",               NULL   },  // green lite
+               { "TWB64 145 - Baja Blast Storm",               NULL   },
+               //{ "TWB64 055 - Android Green",               NULL   },
+               //{ "TWB64 104 - SideM Green",               NULL   },
+               { "TWB64 042 - Light Ver.",               NULL   },
+               { "TWB64 123 - Island Green",               NULL   },
+               { "PixelShift 10 - Game Boy Light",               NULL   },
+               //{ "TWB64 189 - Plumbob Green",               NULL   },
+               //{ "TWB64 124 - Mania Plus Green",               NULL  },
+               //{ "Special 4 (TI-83 Legacy)",                NULL  },
+               //{ "TWB64 146 - Olympic Gold",               NULL   },
+
+
+
+         // inverted
+         // multicolor
+               { "SGB - 2D",               NULL   },
+               { "TWB64 037 - Scooby-Doo Mystery Ver.",               NULL   },
+               { "SGB - 2F",               NULL   },
+               { "PixelShift 06 - CMYK",               NULL   },
+               { "TWB64 027 - Nintendo Switch Lite Ver.",               NULL   },
+               { "TWB64 106 - Angry Volcano Ver.",               NULL   },
+               { "TWB64 077 - Halloween Ver.",               NULL   },
+               { "SGB - 1D",               NULL   }, // names -> leave as colour
+               { "SGB - 3D",               NULL   },// multicolor green lite pink
+               { "GBC - Dark Green",               NULL   }, // A + Right (default GBC)
+               { "GBC - Red",               NULL   },        // A + Up
+               { "GBC - Blue",               NULL   },       // Left
+               { "GBC - Dark Blue",               NULL   },  // A + Left
+               { "Special 3",               NULL   },
+               { "GBC - Yellow",               NULL   },     // B + Down
+               { "PixelShift 33 - Gray Green Mix",               NULL   },
+               { "TWB64 066 - Do The Dew Ver.",               NULL   },
+               { "GBC - Green",               NULL   },      // Right
+               { "PixelShift 34 - Missingno",               NULL   },
+               { "PixelShift 41 - Technicolor",               NULL   },
+               { "GBC - Brown",               NULL   },      // Up
+               { "SGB - 3B",               NULL   },
+               { "Gold Silver and Bronze",             NULL   },     // multicolor
+               { "SGB - 2E",               NULL   },
+               { "GBC - Dark Brown",               NULL   }, // B + Up
+               { "Perfect Majin Emperor",             NULL   },      // multicolor salmon purple
+               { "SGB - 3F",               NULL   },// multicolor purple pink
+               { "PixelShift 20 - GB Bootleg",               NULL   },
+               { "PixelShift 25 - GB Nuked",               NULL   },
+
+
+         // orange
+               { "SGB - 4E",               NULL   },
+               { "TWB64 034 - Travel Wood",               NULL   },
+               { "SGB - 2A",               NULL   },
+               { "TWB64 050 - Labo Fawn",               NULL   },
+               //{ "TWB64 103 - MILLION Yellow!",               NULL   },
+               //{ "TWB64 059 - Google Yellow",               NULL   },
+               { "TWB64 181 - SEIKO Timer Yellow",               NULL   },
+               //{ "TWB64 132 - Neon Orange",               NULL   },
+               //{ "TWB64 152 - Nijigasaki Orange",               NULL   },
+               { "TWB64 160 - G4 Orange",               NULL   },
+               //{ "TWB64 140 - Dragon Ball Orange",               NULL   },
+               //{ "TWB64 185 - Rockstar Orange",               NULL   },
+               { "TWB64 046 - Eevee Brown",               NULL   },
+               { "TWB64 100 - Stone Orange",               NULL   },
+               //{ "TWB64 036 - Game Grump Orange",               NULL   },
+               //{ "TWB64 095 - Hokage Orange",               NULL   },
+               //{ "TWB64 178 - Crash Orange",               NULL   },
+               { "TWB64 011 - Nick Orange",               NULL   },
+               //{ "TWB64 139 - Kakarot Orange",               NULL   },
+
+
+         // pink
+
+               { "TWB64 083 - Super Saiyan Rose",               NULL   },
+               { "TWB64 172 - Super Star Pink",               NULL   },
+               { "TWB64 119 - AKB48 Pink",               NULL   },
+               { "TWB64 069 - Blossom Pink",               NULL   },
+               { "TWB64 107 - Yo-kai Pink",               NULL   },
+               { "TWB64 182 - PINK109",               NULL   },
+               { "SGB - 1C",               NULL   }, // palettes have 'official'
+               { "SGB - 2C",               NULL   },
+               { "PixelShift 29 - Ghost",               NULL   },
+               { "TWB64 032 - Wanda Pink",               NULL   },
+              //{ "TWB64 044 - Someity Pink",               NULL   },
+               { "TWB64 026 - Bizarre Pink",               NULL   },
+               { "TWB64 024 - Super Saiyan God",               NULL   },
+               { "TWB64 101 - 765PRO Pink",               NULL   }, // pink flashy
+               { "TWB64 049 - Aegis Cherry",               NULL   },
+
+
+         // purple
+         // red
+               { "PixelShift 32 - Grapefruit",               NULL   },
+               { "SGB - 4B",               NULL   },
+               { "SGB - 1H",               NULL   },
+               { "SGB - 1A",               NULL   }, // 1-A (default SGB)	
+               //{ "TWB64 035 - Pokemon Ver.",               NULL   },
+               { "TWB64 199 - Duracell Copper",               NULL   },
+               { "TWB64 150 - Olympic Bronze",               NULL   },
+               { "TWB64 057 - Google Red",               NULL   },
+               //{ "TWB64 086 - Saint Snow Red",               NULL   },
+               { "TWB64 156 - Pokedex Red",               NULL   },
+               //{ "TWB64 188 - Pizza Hut Red",               NULL   },
+               //{ "TWB64 005 - Neon Red",               NULL   },
+               //{ "TWB64 064 - Coca-Cola Red",               NULL   },
+               //{ "TWB64 012 - Virtual Boy Ver.",               NULL   },
+               { "PixelShift 44 - Virtual Boy",               NULL   },
+               //{ "TWB64 010 - Mario Red",               NULL   },
+               //{ "TWB64 121 - Fairy Tail Red",               NULL   },
+               //{ "TWB64 154 - Wrestling Red",               NULL   },
+               { "TWB64 197 - Autobot Red",               NULL   },
+               //{ "TWB64 134 - Tokyo Red",               NULL   },
+
+
+         // yellow
+               { "TWB64 007 - Neon Yellow",               NULL   },
+               { "TWB64 141 - Christmas Gold",               NULL   },
+               { "TWB64 166 - Game and Gold",               NULL   },
+               { "TWB64 084 - Super Saiyan",               NULL   },
+               { "TWB64 089 - Super Saiyan 3",               NULL   },
+               //{ "TWB64 179 - Famicom Disk Yellow",               NULL   },
+               { "TWB64 092 - Investigation Yellow",               NULL   },
+               //{ "TWB64 051 - MILLION LIVE GOLD!",               NULL   }, // yellow almost green
+               { "TWB64 191 - Demon's Gold",               NULL   }, // yellow almost green
+               //{ "TWB64 137 - Pac-Man Yellow",               NULL   },
+               //{ "TWB64 045 - Pikachu Yellow",               NULL   },
+               { "Special 1",               NULL   },
+               { "PixelShift 23 - GB Kiosk 2",               NULL   },
+               //{ "TWB64 030 - BANDAI NAMCO Ver.",               NULL   }, //yellow /orange
+            
+
+
+
+         ///////////////////////////////////////////////////////////////////////////////////
+
+         // { "Ultra Black",             NULL   },                // unicolor dark
+         // { "NHK Silver Gray",             NULL   },            // unicolor dark
+         // { "Steam Gray",             NULL   },                 // unicolor dark
+         
+         
+
+        
+         
+
+         { NULL, NULL },
+      },
+      "GB - Light"
+   },
+
+
+
+
+
+
    {
       "gambatte_gbc_color_correction",
       "Color Correction",
@@ -1066,32 +1294,32 @@ struct retro_core_options_v2 options_us = {
 #ifndef HAVE_NO_LANGEXTRA
 struct retro_core_options_v2 *options_intl[RETRO_LANGUAGE_LAST] = {
    &options_us,    /* RETRO_LANGUAGE_ENGLISH */
-   &options_ja,    /* RETRO_LANGUAGE_JAPANESE */
-   &options_fr,    /* RETRO_LANGUAGE_FRENCH */
-   &options_es,    /* RETRO_LANGUAGE_SPANISH */
-   &options_de,    /* RETRO_LANGUAGE_GERMAN */
-   &options_it,    /* RETRO_LANGUAGE_ITALIAN */
-   &options_nl,    /* RETRO_LANGUAGE_DUTCH */
-   &options_pt_br, /* RETRO_LANGUAGE_PORTUGUESE_BRAZIL */
-   &options_pt_pt, /* RETRO_LANGUAGE_PORTUGUESE_PORTUGAL */
-   &options_ru,    /* RETRO_LANGUAGE_RUSSIAN */
-   &options_ko,    /* RETRO_LANGUAGE_KOREAN */
-   &options_cht,   /* RETRO_LANGUAGE_CHINESE_TRADITIONAL */
-   &options_chs,   /* RETRO_LANGUAGE_CHINESE_SIMPLIFIED */
-   &options_eo,    /* RETRO_LANGUAGE_ESPERANTO */
-   &options_pl,    /* RETRO_LANGUAGE_POLISH */
-   &options_vn,    /* RETRO_LANGUAGE_VIETNAMESE */
-   &options_ar,    /* RETRO_LANGUAGE_ARABIC */
-   &options_el,    /* RETRO_LANGUAGE_GREEK */
-   &options_tr,    /* RETRO_LANGUAGE_TURKISH */
-   &options_sk,    /* RETRO_LANGUAGE_SLOVAK */
-   &options_fa,    /* RETRO_LANGUAGE_PERSIAN */
-   &options_he,    /* RETRO_LANGUAGE_HEBREW */
-   &options_ast,   /* RETRO_LANGUAGE_ASTURIAN */
-   &options_fi,    /* RETRO_LANGUAGE_FINNISH */
-   &options_id,    /* RETRO_LANGUAGE_INDONESIAN */
-   &options_sv,    /* RETRO_LANGUAGE_SWEDISH */
-   &options_uk,    /* RETRO_LANGUAGE_UKRAINIAN */
+   // &options_ja,    /* RETRO_LANGUAGE_JAPANESE */
+   // &options_fr,    /* RETRO_LANGUAGE_FRENCH */
+   // &options_es,    /* RETRO_LANGUAGE_SPANISH */
+   // &options_de,    /* RETRO_LANGUAGE_GERMAN */
+   // &options_it,    /* RETRO_LANGUAGE_ITALIAN */
+   // &options_nl,    /* RETRO_LANGUAGE_DUTCH */
+   // &options_pt_br, /* RETRO_LANGUAGE_PORTUGUESE_BRAZIL */
+   // &options_pt_pt, /* RETRO_LANGUAGE_PORTUGUESE_PORTUGAL */
+   // &options_ru,    /* RETRO_LANGUAGE_RUSSIAN */
+   // &options_ko,    /* RETRO_LANGUAGE_KOREAN */
+   // &options_cht,   /* RETRO_LANGUAGE_CHINESE_TRADITIONAL */
+   // &options_chs,   /* RETRO_LANGUAGE_CHINESE_SIMPLIFIED */
+   // &options_eo,    /* RETRO_LANGUAGE_ESPERANTO */
+   // &options_pl,    /* RETRO_LANGUAGE_POLISH */
+   // &options_vn,    /* RETRO_LANGUAGE_VIETNAMESE */
+   // &options_ar,    /* RETRO_LANGUAGE_ARABIC */
+   // &options_el,    /* RETRO_LANGUAGE_GREEK */
+   // &options_tr,    /* RETRO_LANGUAGE_TURKISH */
+   // &options_sk,    /* RETRO_LANGUAGE_SLOVAK */
+   // &options_fa,    /* RETRO_LANGUAGE_PERSIAN */
+   // &options_he,    /* RETRO_LANGUAGE_HEBREW */
+   // &options_ast,   /* RETRO_LANGUAGE_ASTURIAN */
+   // &options_fi,    /* RETRO_LANGUAGE_FINNISH */
+   // &options_id,    /* RETRO_LANGUAGE_INDONESIAN */
+   // &options_sv,    /* RETRO_LANGUAGE_SWEDISH */
+   // &options_uk,    /* RETRO_LANGUAGE_UKRAINIAN */
 };
 #endif
 
@@ -1386,3 +1614,4 @@ error:
 #endif
 
 #endif
+
