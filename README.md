@@ -29,29 +29,31 @@ How this palettes organization is organized ?
 
 This palette organization is simply done by categories of colors :
  - realistic_gb : This category is not really a color of course but a collection of palettes close to the original Game Boy screen.
-> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/__Preview%20Generator/preview/realistic_gb.jpg" height="200">  
+> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/realistic_gb.jpg" height="200">  
  - blue : palettes with a dominant blue color
-> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/__Preview%20Generator/preview/blue.jpg" height="200">  
+> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/blue.jpg" height="200">  
  - brown : palettes with a dominant brown
-> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/__Preview%20Generator/preview/brown.jpg" height="200">  
+> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/brown.jpg" height="200">  
  - gray : palettes with a dominant gray color
-> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/__Preview%20Generator/preview/gray.jpg" height="200">  
+> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/gray.jpg" height="200">  
  - green : palettes with a dominant green color
-> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/__Preview%20Generator/preview/green.jpg" height="200">  
+> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/green.jpg" height="200">  
  - inverted: this category contains particular palettes where colors seems inverted. Can be useful to have great contrast and for people with sight problems.
-> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/__Preview%20Generator/preview/inverted.jpg" height="200">  
+> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/inverted.jpg" height="200">  
  - multicolor : this category contains particular palettes made of several different colors. Ideal for highlighting different elements in specific games.
- > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/__Preview%20Generator/preview/multicolor.jpg" height="200">  
+ > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/multicolor.jpg" height="200">  
  - orange : palettes with a dominant orange color
- > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/__Preview%20Generator/preview/orange.jpg" height="200">  
+ > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/orange.jpg" height="200">  
  - pink : palettes with a dominant pink color
- > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/__Preview%20Generator/preview/pink.jpg" height="200">  - purple : palettes with a dominant purple color
+ > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/pink.jpg" height="200">  
+ - purple : palettes with a dominant purple color
+  > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/purple.jpg" height="200"> 
  - red : palettes with a dominant red color
- > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/__Preview%20Generator/preview/red.jpg" height="200">  
+ > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/red.jpg" height="200">  
  - yellow : palettes with a dominant yellow color
- > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/__Preview%20Generator/preview/yellow.jpg" height="200">  
+ > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/yellow.jpg" height="200">  
  - others : this category contains 128 others palettes which are similar to the ones in the categories. This is a kind of basket for the old original palettes which haven't been retain in the above color categories.
-> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/__Preview%20Generator/preview/others.jpg" height="200">  
+> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/simple-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/others.jpg" height="200">  
 
 How this palettes organization has been done ?
 ------------------------------------------
