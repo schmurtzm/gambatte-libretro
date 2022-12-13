@@ -1,4 +1,4 @@
-name: Build via Docker image
+name: Miyoo Mini - master
 
 on:
   workflow_dispatch:

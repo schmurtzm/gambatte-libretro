@@ -1,4 +1,4 @@
-name: Build via Docker image
+name: Miyoo Mini - simple color organisation
 
 on:
   workflow_dispatch:
