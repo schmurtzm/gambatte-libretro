@@ -1,0 +1,27 @@
+name: Build via Docker image
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: Miyoo-Mini_simple-color-organisation
+    - name: Checkout & build the repo in buildroot
+      run: |
+        docker run \
+        -v ${{ github.workspace }}:/root/workspace \
+        techdevangelist/miyoomini-buildroot:latest /bin/bash -c "cd /root/workspace && make -f Makefile.libretro platform=linux-armv7-cortexa7-neon-hardfloat && echo -n \"Resulting file: \" && ls -lah gambatte_libretro.so && sha1sum gambatte_libretro.so > gambatte_libretro.so.sha1 && sha256sum gambatte_libretro.so > gambatte_libretro.so.sha256"
+
+    - name: Upload the build artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        name: gambatte_libretro.so
+        path: gambatte_libretro.so*
+        if-no-files-found: error
+        retention-days: 30
