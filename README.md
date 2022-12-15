@@ -1,4 +1,4 @@
-# Gambatte - Libretro Core - with simple color organisation for palettes
+# Gambatte - Libretro Core - with advanced color organisation for palettes
 ---------------------------------------------------------------------
 
 
