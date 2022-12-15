@@ -90,36 +90,252 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       NULL,
       NULL,
       {
-         { "Realistic GB",     NULL },       
-         { "Blue",             NULL },
-         { "Brown",            NULL },
-         { "Gray",             NULL },
-         { "Green",            NULL },
-         { "Inverted",         NULL },
-         { "Multicolor",       NULL },
-         { "Orange",           NULL },
-         { "Pink",             NULL },
-         { "Purple",           NULL },
-         { "Red",              NULL },
-         { "Yellow",           NULL },
-         { "Others",           NULL },
+         { "Essentials",     NULL },       
+         { "Subtle",             NULL },
+         { "Single Color",            NULL },
+         { "Multicolor",             NULL },
+         { "Hardware",            NULL },
+         { "Nintendo Official",         NULL },
+         { "Extras",       NULL },
          { NULL, NULL },
       },
-      "Realistic GB"
+      "Essentials"
    },
    {
-      "gambatte_gb_palette_realistic_gb",
-      "Realistic GB",
+      "gambatte_gb_palette_essentials",
+      "Essentials",
       NULL,
-      "Select a palette when 'color category' is set to 'Realistic GB'.",
+      "Select a palette when 'color category' is set to 'Essentials'.",
       NULL,
       "gb_colors",
       {
-         //realistic GB 
+         //Essentials 
+
          { "Jeltron GB-DMG",               NULL },            //GB
-         { "GB Old",               NULL  },
-         { "GB - DMG",               NULL  },    // Original Game Boy
+         { "Jeltron Greenscale",         NULL },    //GB
+         { "B_GB_Studio", NULL },
+         { "Arctic Green",               NULL   },  // similar to TI83
+         { "Glow In The Dark",               NULL   },
+         { "GBP Bivert",               NULL   },
+         { "765 Production Ver.",               NULL   },
+         { "GBC - Grayscale",               NULL   },  // B + Left
+         { NULL, NULL },
+      },
+      "Jeltron GB-DMG"
+   },
+   {
+      "gambatte_gb_palette_subtle",
+      "Subtle",
+      NULL,
+      "Select a palette when 'color category' is set to 'Subtle'.",
+      NULL,
+      "gb_colors",
+      {
+         { "Superball Ivory",               NULL  },
+         { "SGB - 1E",               NULL  }, // codes...)
+         { "Tea Midori",               NULL   },  // green lite
+         { "Pokemon Pinball",          NULL   },    //GB
+         { "Gamate Ver.",               NULL   }, // green
+         { "Fool s Gold and Silver",               NULL   },
+         { "VMU Ver.",               NULL   },
+         { "TOKYO SKYTREE CLOUDY BLUE",                 NULL   },
+         { "Wish",                 NULL   },
+         { "Mega Man V Ver.",               NULL   },
+         { "Wisteria Murasaki",               NULL   },
+         { "B_Raisin", NULL },
+         { "SGB - 4C",               NULL   },
+         { "B_Brick_and_Mortar", NULL },
+         { "Ghost",               NULL   },
+         { "SGB - 2C",               NULL   },
+         { "B_Natural", NULL },
+         { "SGB - 1A",               NULL   }, // 1-A (default SGB)	
+         { "Special 3",               NULL   },
+         { "Grand Ivory",                NULL  },
+         { "Silver Shiro",               NULL   },
+
+
+
+         { NULL, NULL },
+      },
+      "Superball Ivory"
+   },
+   {
+      "gambatte_gb_palette_Single_Color",
+      "Single Color",
+      NULL,
+      "Select a palette when 'color category' is set to 'Single Color'.",
+      NULL,
+      "gb_colors",
+      {
+         { "Supervision Ver.",               NULL   },
+         { "B_Mutant", NULL },
+         { "Neon Green",               NULL   },
+         { "Green Banana",               NULL   },
+         { "Neon Yellow",               NULL   },
          { "Greenscale Ver.",               NULL  },
+         { "Golden Kiiro",               NULL   },
+         { "B_Ketchup_Mustard", NULL },
+         { "Mario Maker",NULL },
+         { "Yellow Banana",               NULL   },
+         { "Nijigasaki Yellow",               NULL   },
+         { "Gold Bar",               NULL   },
+         { "bandai namco tricolor",               NULL   },
+         { "Cheetos",         NULL },
+         { "Sunburst",               NULL   },
+         { "Wrestling Red",               NULL   },
+         { "Oni Aka",               NULL   },
+         { "Sakura Pink",               NULL   },
+         { "SGB - 4F",               NULL   },
+         { "Cardcaptor Pink",               NULL   },
+         { "Bizarre Pink",               NULL   },
+         { "Mega Man V Ver.",               NULL   },
+         { "Aquatic Iro",                 NULL   },
+         { "GB Backlight Blue",                 NULL   },
+         { "Super Saiyan Blue",               NULL   },
+         { NULL, NULL },
+      },
+      "Supervision Ver."
+   },
+   {
+      "gambatte_gb_palette_multicolor",
+      "Multicolor",
+      NULL,
+      "Select a palette when 'color category' is set to 'Multicolor'.",
+      NULL,
+      "gb_colors",
+      {
+         { "B_DoubleRainbowOMG", NULL },
+         { "Nintendo Switch Lite Ver.",               NULL   },
+         { "Halloween Ver.",               NULL   },
+         { "B_Magma", NULL },
+         { "B_Inferno", NULL },
+         { "Pac Palette",NULL },
+         { "Idol World tricolor",NULL },
+         { "Ryuuguu Sunset",             NULL   },             // multicolor yellow pink
+         { "B_WarmCool", NULL },
+         { "GBC - Yellow",               NULL   },     // B + Down
+         { "Moonlight Vision",               NULL   },
+         { "Winter Christmas",          NULL   },  //multicolor
+         { "B_Electric_blue", NULL },
+         { "B_Electric_purple", NULL },
+         { "B_Rainbow", NULL },
+         { "B_Night_Life", NULL },
+         { "B_Pretty_in_Pink", NULL },
+         { "B_Dreamland_Warm", NULL },
+         { "B_Red_skies_at_night", NULL },
+         { "B_Dreamland_cool", NULL },
+         { "B_Emerald_Hills", NULL },
+         { "Tropical Starfall",NULL },
+         { "SGB - 1G",               NULL   },
+         { "GBC - Inverted",               NULL   },   // B + Right
+         { NULL, NULL },
+      },
+      "B_DoubleRainbowOMG"
+   },
+
+
+
+   {
+      "gambatte_gb_palette_hardware",
+      "Hardware",
+      NULL,
+      "Select a palette when 'color category' is set to 'Hardware'.",
+      NULL,
+      "gb_colors",
+      {
+         { "GB Kiosk",               NULL   },
+         { "Game Boy Light",               NULL   },
+         { "GB Washed Yellow Backlight",               NULL   },
+         { "VMU Ver.",               NULL   },
+         { "GB - Light",               NULL   },  // Original Game Boy Light
+         { "GB Old",               NULL  },
+         { "GB Kiosk 2",               NULL   },
+         { "Virtual Boy",               NULL   },
+         { "Nokia 3310 Ver.",               NULL   },
+         { "GB Hunter",               NULL   },
+         { "GB Backlight Faded",                NULL  },
+         { "Game Pocket Computer",               NULL   },
+         { "Game & Watch Ball",               NULL  },
+         { "Arduboy",               NULL   },
+         { "MS-Dos",               NULL   },
+
+
+         { NULL, NULL },
+      },
+      "GB Kiosk"
+   },
+   {
+      "gambatte_gb_palette_nintendo_official",
+      "Nintendo Official",
+      NULL,
+      "Select a palette when 'color category' is set to 'Nintendo Official'.",
+      NULL,
+      "gb_colors",
+      {
+         { "GB - DMG",                 NULL },
+         { "GB - Pocket",              NULL },
+         { "GB - Light",               NULL },
+         { "GBC - Blue",               NULL },
+         { "GBC - Brown",              NULL },
+         { "GBC - Dark Blue",          NULL },
+         { "GBC - Dark Brown",         NULL },
+         { "GBC - Dark Green",         NULL },
+         { "GBC - Grayscale",          NULL },
+         { "GBC - Green",              NULL },
+         { "GBC - Inverted",           NULL },
+         { "GBC - Orange",             NULL },
+         { "GBC - Pastel Mix",         NULL },
+         { "GBC - Red",                NULL },
+         { "GBC - Yellow",             NULL },
+         { "SGB - 1A",                 NULL },
+         { "SGB - 1B",                 NULL },
+         { "SGB - 1C",                 NULL },
+         { "SGB - 1D",                 NULL },
+         { "SGB - 1E",                 NULL },
+         { "SGB - 1F",                 NULL },
+         { "SGB - 1G",                 NULL },
+         { "SGB - 1H",                 NULL },
+         { "SGB - 2A",                 NULL },
+         { "SGB - 2B",                 NULL },
+         { "SGB - 2C",                 NULL },
+         { "SGB - 2D",                 NULL },
+         { "SGB - 2E",                 NULL },
+         { "SGB - 2F",                 NULL },
+         { "SGB - 2G",                 NULL },
+         { "SGB - 2H",                 NULL },
+         { "SGB - 3A",                 NULL },
+         { "SGB - 3B",                 NULL },
+         { "SGB - 3C",                 NULL },
+         { "SGB - 3D",                 NULL },
+         { "SGB - 3E",                 NULL },
+         { "SGB - 3F",                 NULL },
+         { "SGB - 3G",                 NULL },
+         { "SGB - 3H",                 NULL },
+         { "SGB - 4A",                 NULL },
+         { "SGB - 4B",                 NULL },
+         { "SGB - 4C",                 NULL },
+         { "SGB - 4D",                 NULL },
+         { "SGB - 4E",                 NULL },
+         { "SGB - 4F",                 NULL },
+         { "SGB - 4G",                 NULL },
+         { "SGB - 4H",                 NULL },
+         { NULL, NULL },
+      },
+      "GB - DMG"
+   },
+   {
+      "gambatte_gb_palette_extras",
+      "Extras",
+      NULL,
+      "Select a palette when 'color category' is set to 'Extras'.",
+      NULL,
+      "gb_colors",
+      {
+
+
+
+ // Realistic GB
+        // { "GB - DMG",               NULL  },    // Original Game Boy
          { "GB New",               NULL  },
          { "GB Backlight Yellow Dark",               NULL  },
          { "Game.com Ver.",               NULL  },
@@ -131,159 +347,82 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          { "Camouflage",               NULL  },
          { "Hogwarts Goldius",             NULL   },	         // unicolor MARRON 
          { "Paris Gold",               NULL  },
-         { "Superball Ivory",               NULL  },
          { "Lime Midori",               NULL  },
-         { "Pokemon Pinball",          NULL   },    //GB
          { "SGB - 4D",               NULL  },
          { "SGB - 1B",               NULL  }, // (NB: don't think these
-         { "SGB - 1E",               NULL  }, // codes...)
-         { NULL, NULL },
-      },
-      "Jeltron GB-DMG"
-   },
-   {
-      "gambatte_gb_palette_blue",
-      "Blue",
-      NULL,
-      "Select a palette when 'color category' is set to 'Blue'.",
-      NULL,
-      "gb_colors",
-      {
+
+
+  // blue
          { "Disney Dream Blue",                 NULL   },
          { "Doraemon Blue",                 NULL   },
-         { "GB Backlight Blue",                 NULL   },
-         { "Aquatic Iro",                 NULL   },
-         { "TOKYO SKYTREE CLOUDY BLUE",                 NULL   },
          { "Sword Art Cyan",                 NULL   },
-         { "Wish",                 NULL   },
          { "Blue Stripes Ver.",                 NULL   },
-         { NULL, NULL },
-      },
-      "Aquatic Iro"
-   },
-   {
-      "gambatte_gb_palette_brown",
-      "Brown",
-      NULL,
-      "Select a palette when 'color category' is set to 'Brown'.",
-      NULL,
-      "gb_colors",
-      {
+
+
+
+
+
+  // brown
          { "Chocolate Bar",               NULL   },
          { "DK Barrel Brown",               NULL   },
          { "Fruity Orange",               NULL   },
          { "Survey Corps Brown",               NULL   },
          { "Teyvat Brown",             NULL   },		         // unicolor MARRON
-         { NULL, NULL },
-      },
-      "Chocolate Bar"
-   },
-   {
-      "gambatte_gb_palette_gray",
-      "Gray",
-      NULL,
-      "Select a palette when 'color category' is set to 'Gray'.",
-      NULL,
-      "gb_colors",
-      {
+
+
+
+ // gray
          { "Newspaper",                NULL  },
          { "Microvision Ver.",                NULL  },
          { "Perfected Ultra Instinct",                NULL  },
          { "Tamagotchi Ver.",                NULL  },
-         { "GB Backlight Faded",                NULL  },
-         { "Grand Ivory",                NULL  },
-         { "Game & Watch Ball",               NULL  },
          { "Silhouette",                NULL  },
-         { "Game Pocket Computer",               NULL   },
-         { NULL, NULL },
-      },
-      "Perfected Ultra Instinct"
-   },
 
 
 
-   {
-      "gambatte_gb_palette_green",
-      "Green",
-      NULL,
-      "Select a palette when 'color category' is set to 'Green'.",
-      NULL,
-      "gb_colors",
-      {
+ // green
             { "Gamate",               NULL   },
-            { "Neon Green",               NULL   },
             //{ "Scarlett Green",               NULL   },
             { "Google Green",               NULL   },
             //{ "Irish Green",               NULL   },
             //{ "Xbox Green",               NULL  },   // almost yellow
             //{ "Legendary Super Saiyan",               NULL  },   // almost yellow
-            { "Glow In The Dark",               NULL   },
-            { "Supervision Ver.",               NULL   },
-            { "VMU Ver.",               NULL   },
             { "GameKing Ver.",               NULL   },
-            { "Jeltron Greenscale",         NULL },    //GB
             { "SGB - 3H",               NULL  },
             { "Lemon-Lime Green",               NULL   },
             //{ "Pocket Tales Ver.",               NULL   },   // almost yellow
             { "TI-83 Ver.",                NULL  },
-           // { "Arctic Green",               NULL   },  // similar to TI83
-         { NULL, NULL },
-      },
-      "Lemon-Lime Green"
-   },
-   {
-      "gambatte_gb_palette_inverted",
-      "Inverted",
-      NULL,
-      "Select a palette when 'color category' is set to 'Inverted'.",
-      NULL,
-      "gb_colors",
-      {
-         { "Arduboy",               NULL   },
+
+
+
+
+
+ // inverted
          { "Pip-Boy",               NULL   },
          { "Nightvision Green",          NULL  },    //inverted
-         { "MS-Dos",               NULL   },
          { "Tron",               NULL   },
          { "Virtual Vision",          NULL   },    //inverted
-         { "SGB - 1G",               NULL   },
          { "Vulnerable Blue",             NULL   },		      // INVERTED BLUE
          { "SGB - 4G",               NULL   },
          { "SGB - 2G",               NULL   },
          { "SGB - 3G",               NULL   },
-         { "GBC - Inverted",               NULL   },   // B + Right
-         { NULL, NULL },
-      },
-      "Nightvision Green"
-   },
-   {
-      "gambatte_gb_palette_multicolor",
-      "Multicolor",
-      NULL,
-      "Select a palette when 'color category' is set to 'Multicolor'.",
-      NULL,
-      "gb_colors",
-      {
 
 
 
-
-
+ // multicolor
          { "bandai namco tricolor",             NULL   },      // multicolor
          { "Funimation Melon", NULL },   //multicolor
          { "Vaporwave",               NULL   },
 
-         { "Moonlight Vision",               NULL   },
          { "champion s tunic",             NULL   },           // multicolor
          { "Bikini Bottom Ver.",               NULL   },
          { "Retro Bogeda",               NULL   },
-         { "Ryuuguu Sunset",             NULL   },             // multicolor yellow pink
          { "GBC - Pastel Mix",               NULL   }, // Down
 
          { "Super Famicom Suprem",             NULL   },       // multicolor
          { "NASCAR Ver.",               NULL   },
          { "Doraemon Tricolor",             NULL   },          // multicolor
          { "Christmas Ver.",               NULL   },
-         { "Winter Christmas",          NULL   },  //multicolor
          { "Classy Christmas",          NULL   },  //multicolor
          { "SGB - 3A",               NULL   },
 
@@ -294,59 +433,30 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          { "JPop Idol Sherbet",            NULL   },           // multicolor pink blue
 
          //{ "Special 2",               NULL   },
-         { NULL, NULL },
-      },
-      "bandai namco tricolor"
-   },
-   {
-      "gambatte_gb_palette_orange",
-      "Orange",
-      NULL,
-      "Select a palette when 'color category' is set to 'Orange'.",
-      NULL,
-      "gb_colors",
-      {
-         { "Cheetos",         NULL },
+
+
+
+   // orange     
          { "Value Orange",               NULL   },
          { "Camouflage Ver.",               NULL   },
          { "SGB - 3E",               NULL   },
          { "GB Backlight Orange",               NULL   },
-         { "Nijigasaki Yellow",               NULL   },
          { "Crunchyroll Orange",               NULL   },
          { "GBC - Orange",               NULL   },     // A + Down
          { "SGB - 2B",               NULL   },
-         { NULL, NULL },
-      },
-      "Cheetos"
-   },
-   {
-      "gambatte_gb_palette_pink",
-      "Pink",
-      NULL,
-      "Select a palette when 'color category' is set to 'Pink'.",
-      NULL,
-      "gb_colors",
-      {
+
+
+    // pink
          { "Muse Pink",               NULL   },
          { "Neon Pink",               NULL   },
          { "Barbie Pink",               NULL   },
          { "Susan G. Pink",               NULL   },
          { "Patrick Star Pink",               NULL   },
-         { "Cardcaptor Pink",               NULL   },
          { "Sanrio Pink",               NULL   },
-         { "Sakura Pink",               NULL   },
-         { NULL, NULL },
-      },
-      "Sakura Pink"
-   },
-   {
-      "gambatte_gb_palette_purple",
-      "Purple",
-      NULL,
-      "Select a palette when 'color category' is set to 'Purple'.",
-      NULL,
-      "gb_colors",
-      {
+
+
+
+   // purple
          { "Royal Blue",                 NULL   },
          { "Neon Purple",               NULL   },
          { "Liella Purple!",               NULL   },
@@ -354,52 +464,30 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          { "Equestrian Purple",               NULL   },
          { "Yo-kai Purple",               NULL   },
          { "GB Backlight White ",  NULL   },
-         { "Wisteria Murasaki",               NULL   },
-         { "SGB - 4F",               NULL   },
-         { "SGB - 4C",               NULL   },
-         { NULL, NULL },
-      },
-      "Wisteria Murasaki"
-   },
-   {
-      "gambatte_gb_palette_red",
-      "Red",
-      NULL,
-      "Select a palette when 'color category' is set to 'Red'.",
-      NULL,
-      "gb_colors",
-      {
+
+
+
+ // red
          { "Phantom Red",               NULL   },
          { "Berserk Blood",               NULL   },
          { "Team Rocket Red",               NULL   },
          { "Straw Hat Red",               NULL   },
-         { "Oni Aka",               NULL   },
          { "SGB - 1F",               NULL   },
-         { NULL, NULL },
-      },
-      "Phantom Red"
-   },
-   {
-      "gambatte_gb_palette_yellow",
-      "Yellow",
-      NULL,
-      "Select a palette when 'color category' is set to 'Yellow'.",
-      NULL,
-      "gb_colors",
-      {
-         { "Yellow Banana",               NULL   },
+
+
+
+// yellow
          { "Odyssey Gold",               NULL   },
         // { "Kingdom Key Gold",          NULL   },    
          { "Builder Yellow",               NULL   },
          { "SpongeBob Yellow",               NULL   },
-         { "Gold Bar",               NULL   },
-         { "Sunburst",               NULL   },
-         { "Golden Kiiro",               NULL   },
         
+
          { NULL, NULL },
       },
-      "Yellow Banana"
+      "GB - DMG"
    },
+   
 
    /////////////////////////////////////===========================================================================================
    {
@@ -410,10 +498,11 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       NULL,
       "gb_colors",
       {
+
          // Maximum 128 items
 
-         // realistic_gb
-               { "SGB - 4H",               NULL   },
+         // Realistic GB
+               //{ "SGB - 4H",               NULL   },
                { "Link's Awakening DX Ver.",               NULL   },
                { "Buttercup Green",               NULL   },
                { "Star Command Green",               NULL   },
@@ -428,7 +517,6 @@ struct retro_core_option_v2_definition option_defs_us[] = {
                { "DMG Ver.",               NULL   },
                //{ "Classic LCD",               NULL   },
                { "Gamebuino Classic Ver.",               NULL   },
-               { "Nokia 3310 Ver.",               NULL   },
 
          // blue
                { "Google Blue",               NULL   },
@@ -453,28 +541,20 @@ struct retro_core_option_v2_definition option_defs_us[] = {
                //{ "CINDERELLA Blue",               NULL   },
                { "Beijing Blue",               NULL   },
                //{ "Miku Blue",               NULL   },
-               { "Super Saiyan Blue",               NULL   },
                { "Niconico Sea Green",               NULL   },
-               { "GB - Light",               NULL   },  // Original Game Boy Light
                { "Bubbles Blue",               NULL   },
                { "SHINY Sky Blue",               NULL   },
                //{ "Ghostly Aoi",               NULL   },
-               { "GBP Bivert",               NULL   },
-               { "Mega Man V Ver.",               NULL   },
                { "Classic Blurple",               NULL   },
-               { "Silver Shiro",               NULL   },
                { "GB - Pocket",               NULL   }, // Original Game Boy Pocket	
-               { "765 Production Ver.",               NULL   },
                { "Game Master Ver.",               NULL   },
                { "PocketStation Ver.",               NULL   },
-               { "GB Hunter",               NULL   },
                { "Olympic Silver",               NULL   },
 
 
          // gray
                { "Neo Geo Pocket Ver.",               NULL   }, // grey
                { "Anime Expo Ver.",               NULL   },
-               { "GBC - Grayscale",               NULL   },  // B + Left
                { "SGB - 2H",               NULL   },
                //{ "WonderSwan Ver.",               NULL   },
                { "Pretty Guardian Gold",               NULL   },
@@ -484,26 +564,20 @@ struct retro_core_option_v2_definition option_defs_us[] = {
 
 
          // green
-               { "GB Kiosk",               NULL   },
                { "Evangelion Green",               NULL   },
                { "Cosmo Green",               NULL   },
                { "Shenron Green",               NULL   },
                //{ "Clover Green",               NULL   },
                { "Puyo Puyo Green",               NULL   },
-               { "Gamate Ver.",               NULL   }, // green
-               //{ "Green Banana",               NULL   },
                { "Bubblun Green",               NULL   },
                //{ "Game Awards Cyan",               NULL   },
                { "Deku Alpha Emerald",               NULL   },
-               { "GB Washed Yellow Backlight",               NULL   },
                { "Easy Greens",               NULL   },
-               { "Tea Midori",               NULL   },  // green lite
                { "Baja Blast Storm",               NULL   },
                //{ "Android Green",               NULL   },
                //{ "SideM Green",               NULL   },
                { "Light Ver.",               NULL   },
                { "Island Green",               NULL   },
-               { "Game Boy Light",               NULL   },
                //{ "Plumbob Green",               NULL   },
                //{ "Mania Plus Green",               NULL  },
                //{ "Special 4 (TI-83 Legacy)",                NULL  },
@@ -517,17 +591,13 @@ struct retro_core_option_v2_definition option_defs_us[] = {
                { "Scooby-Doo Mystery Ver.",               NULL   },
                { "SGB - 2F",               NULL   },
                { "CMYK",               NULL   },
-               { "Nintendo Switch Lite Ver.",               NULL   },
                { "Angry Volcano Ver.",               NULL   },
-               { "Halloween Ver.",               NULL   },
                { "SGB - 1D",               NULL   }, // names -> leave as colour
                { "SGB - 3D",               NULL   },// multicolor green lite pink
                { "GBC - Dark Green",               NULL   }, // A + Right (default GBC)
                { "GBC - Red",               NULL   },        // A + Up
                { "GBC - Blue",               NULL   },       // Left
                { "GBC - Dark Blue",               NULL   },  // A + Left
-               { "Special 3",               NULL   },
-               { "GBC - Yellow",               NULL   },     // B + Down
                { "Gray Green Mix",               NULL   },
                { "Do The Dew Ver.",               NULL   },
                { "GBC - Green",               NULL   },      // Right
@@ -575,11 +645,8 @@ struct retro_core_option_v2_definition option_defs_us[] = {
                { "Yo-kai Pink",               NULL   },
                { "PINK109",               NULL   },
                { "SGB - 1C",               NULL   }, // palettes have 'official'
-               { "SGB - 2C",               NULL   },
-               { "Ghost",               NULL   },
                { "Wanda Pink",               NULL   },
               //{ "Someity Pink",               NULL   },
-               { "Bizarre Pink",               NULL   },
                { "Super Saiyan God",               NULL   },
                { "765PRO Pink",               NULL   }, // pink flashy
                { "Aegis Cherry",               NULL   },
@@ -590,7 +657,6 @@ struct retro_core_option_v2_definition option_defs_us[] = {
                { "Grapefruit",               NULL   },
                { "SGB - 4B",               NULL   },
                { "SGB - 1H",               NULL   },
-               { "SGB - 1A",               NULL   }, // 1-A (default SGB)	
                //{ "Pokemon Ver.",               NULL   },
                { "Duracell Copper",               NULL   },
                { "Olympic Bronze",               NULL   },
@@ -601,10 +667,8 @@ struct retro_core_option_v2_definition option_defs_us[] = {
                //{ "Neon Red",               NULL   },
                //{ "Coca-Cola Red",               NULL   },
                //{ "Virtual Boy Ver.",               NULL   },
-               { "Virtual Boy",               NULL   },
                //{ "Mario Red",               NULL   },
                //{ "Fairy Tail Red",               NULL   },
-               //{ "Wrestling Red",               NULL   },
                { "Autobot Red",               NULL   },
                //{ "Tokyo Red",               NULL   },
 
@@ -615,14 +679,12 @@ struct retro_core_option_v2_definition option_defs_us[] = {
                { "Game and Gold",               NULL   },
                { "Super Saiyan 3",               NULL   },
                //{ "Famicom Disk Yellow",               NULL   },
-               { "Neon Yellow",               NULL   },
                { "Investigation Yellow",               NULL   },
                //{ "MILLION LIVE GOLD!",               NULL   }, // yellow almost green
                { "Demon's Gold",               NULL   }, // yellow almost green
                //{ "Pac-Man Yellow",               NULL   },
                //{ "Pikachu Yellow",               NULL   },
                { "Special 1",               NULL   },
-               { "GB Kiosk 2",               NULL   },
                //{ "BANDAI NAMCO Ver.",               NULL   }, //yellow /orange
             
 
@@ -633,17 +695,25 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          // { "Ultra Black",             NULL   },                // unicolor dark
          // { "NHK Silver Gray",             NULL   },            // unicolor dark
          // { "Steam Gray",             NULL   },                 // unicolor dark
-         
-         
 
+//////jeltron //////////////////////////////////////
+               { "B_Cyber_Lipstick", NULL },
+               { "B_Gold", NULL },
+               { "B_Imperial_Purple", NULL },
+               { "B_Meatball", NULL },
+               { "B_MsPac", NULL },
+               { "B_Neapolitan", NULL },
+               { "B_Pistachio", NULL },
+               { "B_RedDevil", NULL },
+               { "B_Silver_Cool", NULL },
+               { "B_Silver_Warm", NULL },
+               { "B_Sour_Tart", NULL },
+               { "B_Under_Construction", NULL },
         
-         
-
-         { NULL, NULL },
+               { NULL, NULL },
       },
-      "GB - Light"
+      "Link's Awakening DX Ver."
    },
-
 
 
 

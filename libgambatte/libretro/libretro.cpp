@@ -356,53 +356,40 @@ static unsigned palette_switch_counter = 0;
  *   a number of other parameters must be
  *   hardcoded anyway... */
 //#define NUM_PALETTES_DEFAULT       0
-#define NUM_PALETTES_REALISTIC_GB      21
-#define NUM_PALETTES_BLUE      8
-#define NUM_PALETTES_BROWN  5
-#define NUM_PALETTES_GRAY  9
-#define NUM_PALETTES_GREEN          11
-#define NUM_PALETTES_INVERTED             12
-#define NUM_PALETTES_MULTICOLOR           21
-#define NUM_PALETTES_ORANGE             9
-#define NUM_PALETTES_PINK             8
-#define NUM_PALETTES_PURPLE             10
-#define NUM_PALETTES_RED             6
-#define NUM_PALETTES_YELLOW             7
-#define NUM_PALETTES_OTHERS             127
-#define NUM_PALETTES_TOTAL  (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED + NUM_PALETTES_YELLOW + NUM_PALETTES_OTHERS)
+#define NUM_PALETTES_ESSENTIALS      8
+#define NUM_PALETTES_SUBTLE      21
+#define NUM_PALETTES_SINGLE_COLOR  25
+#define NUM_PALETTES_MULTICOLOR  24
+#define NUM_PALETTES_HARDWARE          15
+#define NUM_PALETTES_NINTENDO_OFFICIAL             47
+#define NUM_PALETTES_EXTRAS          88
+#define NUM_PALETTES_OTHERS            113
+#define NUM_PALETTES_TOTAL  (NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_HARDWARE + NUM_PALETTES_NINTENDO_OFFICIAL + NUM_PALETTES_EXTRAS + NUM_PALETTES_OTHERS )
 
 //struct retro_core_option_value *palettes_default_opt_values      = NULL;
-struct retro_core_option_value *palettes_realistic_gb_opt_values      = NULL;
-struct retro_core_option_value *palettes_blue_opt_values      = NULL;
-struct retro_core_option_value *palettes_brown_opt_values      = NULL;
-struct retro_core_option_value *palettes_gray_opt_values      = NULL;
-struct retro_core_option_value *palettes_green_opt_values      = NULL;
-struct retro_core_option_value *palettes_inverted_opt_values      = NULL;
+struct retro_core_option_value *palettes_essentials_opt_values      = NULL;
+struct retro_core_option_value *palettes_subtle_opt_values      = NULL;
+struct retro_core_option_value *palettes_Single_Color_opt_values      = NULL;
 struct retro_core_option_value *palettes_multicolor_opt_values      = NULL;
-struct retro_core_option_value *palettes_orange_opt_values      = NULL;
-struct retro_core_option_value *palettes_pink_opt_values      = NULL;
-struct retro_core_option_value *palettes_purple_opt_values      = NULL;
-struct retro_core_option_value *palettes_red_opt_values      = NULL;
-struct retro_core_option_value *palettes_yellow_opt_values      = NULL;
+struct retro_core_option_value *palettes_hardware_opt_values      = NULL;
+struct retro_core_option_value *palettes_nintendo_official_opt_values      = NULL;
+struct retro_core_option_value *palettes_extras_opt_values      = NULL;
 struct retro_core_option_value *palettes_others_opt_values      = NULL;
+
 
 
 static const char *internal_palette_labels[NUM_PALETTES_TOTAL] = {0};
 
 //static size_t *palettes_default_index_map      = NULL;
-static size_t *palettes_realistic_gb_index_map      = NULL;
-static size_t *palettes_blue_index_map      = NULL;
-static size_t *palettes_brown_index_map      = NULL;
-static size_t *palettes_gray_index_map      = NULL;
-static size_t *palettes_green_index_map      = NULL;
-static size_t *palettes_inverted_index_map      = NULL;
+static size_t *palettes_essentials_index_map      = NULL;
+static size_t *palettes_subtle_index_map      = NULL;
+static size_t *palettes_single_color_index_map      = NULL;
 static size_t *palettes_multicolor_index_map      = NULL;
-static size_t *palettes_orange_index_map      = NULL;
-static size_t *palettes_pink_index_map      = NULL;
-static size_t *palettes_purple_index_map      = NULL;
-static size_t *palettes_red_index_map      = NULL;
-static size_t *palettes_yellow_index_map      = NULL;
+static size_t *palettes_hardware_index_map      = NULL;
+static size_t *palettes_nintendo_official_index_map      = NULL;
+static size_t *palettes_extras_index_map      = NULL;
 static size_t *palettes_others_index_map      = NULL;
+
 
 static void parse_internal_palette_values(const char *key,
       struct retro_core_option_v2_definition *opt_defs_intl,
@@ -519,85 +506,55 @@ static void init_palette_switch(void)
 #endif
 
    /* Parse palette values for each palette group
-   /* > Realistic GB */
-   parse_internal_palette_values("gambatte_gb_palette_realistic_gb",
-         opt_defs_intl, NUM_PALETTES_REALISTIC_GB,
+   /* > Essentials */
+   parse_internal_palette_values("gambatte_gb_palette_essentials",
+         opt_defs_intl, NUM_PALETTES_ESSENTIALS,
          0,
-         &palettes_realistic_gb_opt_values,
-         &palettes_realistic_gb_index_map);
-   /* > Blue Palettes */
-   parse_internal_palette_values("gambatte_gb_palette_blue",
-         opt_defs_intl, NUM_PALETTES_BLUE,
-         NUM_PALETTES_REALISTIC_GB,
-         &palettes_blue_opt_values,
-         &palettes_blue_index_map);
-   /* > Brown Palettes */
-   parse_internal_palette_values("gambatte_gb_palette_brown",
-         opt_defs_intl, NUM_PALETTES_BROWN,
-         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE,
-         &palettes_brown_opt_values,
-         &palettes_brown_index_map);
-   /* > Gray Pack 2 palettes */
-   parse_internal_palette_values("gambatte_gb_palette_gray",
-         opt_defs_intl, NUM_PALETTES_GRAY,
-         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN,
-         &palettes_gray_opt_values,
-         &palettes_gray_index_map);
-   /* > Green Palettes */
-   parse_internal_palette_values("gambatte_gb_palette_green",
-         opt_defs_intl, NUM_PALETTES_GREEN,
-         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY,
-         &palettes_green_opt_values,
-         &palettes_green_index_map);
-   /* > Inverted Palettes */
-   parse_internal_palette_values("gambatte_gb_palette_inverted",
-         opt_defs_intl, NUM_PALETTES_INVERTED,
-         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN ,
-         &palettes_inverted_opt_values,
-         &palettes_inverted_index_map);
-   /* > Multicolor Palettes */
+         &palettes_essentials_opt_values,
+         &palettes_essentials_index_map);
+   /* > Subtle Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_subtle",
+         opt_defs_intl, NUM_PALETTES_SUBTLE,
+         NUM_PALETTES_ESSENTIALS,
+         &palettes_subtle_opt_values,
+         &palettes_subtle_index_map);
+   /* > Single Color Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_Single_Color",
+         opt_defs_intl, NUM_PALETTES_SINGLE_COLOR,
+         NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE,
+         &palettes_Single_Color_opt_values,
+         &palettes_single_color_index_map);
+   /* > Multicolor Pack palettes */
    parse_internal_palette_values("gambatte_gb_palette_multicolor",
          opt_defs_intl, NUM_PALETTES_MULTICOLOR,
-         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED ,
+         NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR,
          &palettes_multicolor_opt_values,
          &palettes_multicolor_index_map);
-   /* > Orange Palettes */
-   parse_internal_palette_values("gambatte_gb_palette_orange",
-         opt_defs_intl, NUM_PALETTES_ORANGE,
-         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR ,
-         &palettes_orange_opt_values,
-         &palettes_orange_index_map);
-   /* > Pink Palettes */
-   parse_internal_palette_values("gambatte_gb_palette_pink",
-         opt_defs_intl, NUM_PALETTES_PINK,
-         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE,
-         &palettes_pink_opt_values,
-         &palettes_pink_index_map);
-   /* > Purple Palettes */
-   parse_internal_palette_values("gambatte_gb_palette_purple",
-         opt_defs_intl, NUM_PALETTES_PURPLE,
-         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK ,
-         &palettes_purple_opt_values,
-         &palettes_purple_index_map);
-   /* > Red Palettes */
-   parse_internal_palette_values("gambatte_gb_palette_red",
-         opt_defs_intl, NUM_PALETTES_RED,
-         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE ,
-         &palettes_red_opt_values,
-         &palettes_red_index_map);
-   /* > Yellow Palettes */
-   parse_internal_palette_values("gambatte_gb_palette_yellow",
-         opt_defs_intl, NUM_PALETTES_YELLOW,
-         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED ,
-         &palettes_yellow_opt_values,
-         &palettes_yellow_index_map);
+   /* > Hardware Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_hardware",
+         opt_defs_intl, NUM_PALETTES_HARDWARE,
+         NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR,
+         &palettes_hardware_opt_values,
+         &palettes_hardware_index_map);
+   /* > Nintendo Official Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_nintendo_official",
+         opt_defs_intl, NUM_PALETTES_NINTENDO_OFFICIAL,
+         NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_HARDWARE ,
+         &palettes_nintendo_official_opt_values,
+         &palettes_nintendo_official_index_map);
+   /* > extras Palettes */
+   parse_internal_palette_values("gambatte_gb_palette_extras",
+         opt_defs_intl, NUM_PALETTES_EXTRAS,
+         NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_HARDWARE + NUM_PALETTES_NINTENDO_OFFICIAL ,
+         &palettes_extras_opt_values,
+         &palettes_extras_index_map);
    /* > Others Palettes */
    parse_internal_palette_values("gambatte_gb_palette_others",
          opt_defs_intl, NUM_PALETTES_OTHERS,
-         NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED + NUM_PALETTES_YELLOW,
+         NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_HARDWARE + NUM_PALETTES_NINTENDO_OFFICIAL + NUM_PALETTES_EXTRAS ,
          &palettes_others_opt_values,
          &palettes_others_index_map);
-   
+  
 
 }
 
@@ -609,34 +566,25 @@ static void deinit_palette_switch(void)
    internal_palette_index           = 0;
    palette_switch_counter           = 0;
 
-   palettes_realistic_gb_opt_values= NULL;
-   palettes_blue_opt_values= NULL;
-   palettes_brown_opt_values= NULL;
-   palettes_gray_opt_values= NULL;
-   palettes_green_opt_values= NULL;
-   palettes_inverted_opt_values= NULL;
+   palettes_essentials_opt_values= NULL;
+   palettes_subtle_opt_values= NULL;
+   palettes_Single_Color_opt_values= NULL;
    palettes_multicolor_opt_values= NULL;
-   palettes_orange_opt_values= NULL;
-   palettes_pink_opt_values= NULL;
-   palettes_purple_opt_values= NULL;
-   palettes_red_opt_values= NULL;
-   palettes_yellow_opt_values= NULL;
+   palettes_hardware_opt_values= NULL;
+   palettes_nintendo_official_opt_values= NULL;
+   palettes_extras_opt_values= NULL;
    palettes_others_opt_values= NULL;
 
 
-  RHMAP_FREE(palettes_realistic_gb_index_map);
-  RHMAP_FREE(palettes_blue_index_map);
-  RHMAP_FREE(palettes_brown_index_map);
-  RHMAP_FREE(palettes_gray_index_map);
-  RHMAP_FREE(palettes_green_index_map);
-  RHMAP_FREE(palettes_inverted_index_map);
+  RHMAP_FREE(palettes_essentials_index_map);
+  RHMAP_FREE(palettes_subtle_index_map);
+  RHMAP_FREE(palettes_single_color_index_map);
   RHMAP_FREE(palettes_multicolor_index_map);
-  RHMAP_FREE(palettes_orange_index_map);
-  RHMAP_FREE(palettes_pink_index_map);
-  RHMAP_FREE(palettes_purple_index_map);
-  RHMAP_FREE(palettes_red_index_map);
-  RHMAP_FREE(palettes_yellow_index_map);
+  RHMAP_FREE(palettes_hardware_index_map);
+  RHMAP_FREE(palettes_nintendo_official_index_map);
+  RHMAP_FREE(palettes_extras_index_map);
   RHMAP_FREE(palettes_others_index_map);
+
 }
 
 static void palette_switch_set_index(size_t palette_index)
@@ -658,110 +606,71 @@ static void palette_switch_set_index(size_t palette_index)
    //    opt_index              = palette_index;
    //    palettes_default_value = palettes_default_opt_values[opt_index].value;
    // }
-   if (palette_index <   NUM_PALETTES_REALISTIC_GB)
+   if (palette_index <   NUM_PALETTES_ESSENTIALS)
    {
-      palettes_default_value = "Realistic GB";
+      palettes_default_value = "Essentials";
       opt_index              = palette_index ;
-      palettes_ext_key       = "gambatte_gb_palette_realistic_gb";
-      palettes_ext_value     = palettes_realistic_gb_opt_values[opt_index].value;
-      CurrentColorTotal      = NUM_PALETTES_REALISTIC_GB;
+      palettes_ext_key       = "gambatte_gb_palette_essentials";
+      palettes_ext_value     = palettes_essentials_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_ESSENTIALS;
    }
-   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE)
+   else if (palette_index <  NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE)
    {
-      palettes_default_value = "Blue";
-      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB);
-      palettes_ext_key       = "gambatte_gb_palette_blue";
-      palettes_ext_value     = palettes_blue_opt_values[opt_index].value;
-      CurrentColorTotal      = NUM_PALETTES_BLUE;
+      palettes_default_value = "Subtle";
+      opt_index              = palette_index - (NUM_PALETTES_ESSENTIALS);
+      palettes_ext_key       = "gambatte_gb_palette_subtle";
+      palettes_ext_value     = palettes_subtle_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_SUBTLE;
    }
-   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN)
+   else if (palette_index <  NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR)
    {
-      palettes_default_value = "Brown";
-      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE);
-      palettes_ext_key       = "gambatte_gb_palette_brown";
-      palettes_ext_value     = palettes_brown_opt_values[opt_index].value;
-      CurrentColorTotal      = NUM_PALETTES_BROWN;
+      palettes_default_value = "Single Color";
+      opt_index              = palette_index - (NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE);
+      palettes_ext_key       = "gambatte_gb_palette_Single_Color";
+      palettes_ext_value     = palettes_Single_Color_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_SINGLE_COLOR;
    }
-   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY )
-   {
-      palettes_default_value = "Gray";
-      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN);
-      palettes_ext_key       = "gambatte_gb_palette_gray";
-      palettes_ext_value     = palettes_gray_opt_values[opt_index].value;
-      CurrentColorTotal      = NUM_PALETTES_GRAY;
-   }
-   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN)
-   {
-      palettes_default_value = "Green";
-      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY);
-      palettes_ext_key       = "gambatte_gb_palette_green";
-      palettes_ext_value     = palettes_green_opt_values[opt_index].value;
-      CurrentColorTotal      = NUM_PALETTES_GREEN;
-   }
-   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED)
-   {
-      palettes_default_value = "Inverted";
-      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN);
-      palettes_ext_key       = "gambatte_gb_palette_inverted";
-      palettes_ext_value     = palettes_inverted_opt_values[opt_index].value;
-      CurrentColorTotal      = NUM_PALETTES_INVERTED;
-   }
-   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR)
+   else if (palette_index <  NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR )
    {
       palettes_default_value = "Multicolor";
-      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED);
+      opt_index              = palette_index - (NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR);
       palettes_ext_key       = "gambatte_gb_palette_multicolor";
       palettes_ext_value     = palettes_multicolor_opt_values[opt_index].value;
       CurrentColorTotal      = NUM_PALETTES_MULTICOLOR;
    }
-   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE)
+   else if (palette_index <  NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_HARDWARE)
    {
-      palettes_default_value = "Orange";
-      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR);
-      palettes_ext_key       = "gambatte_gb_palette_orange";
-      palettes_ext_value     = palettes_orange_opt_values[opt_index].value;
-      CurrentColorTotal      = NUM_PALETTES_ORANGE;
+      palettes_default_value = "Hardware";
+      opt_index              = palette_index - (NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR);
+      palettes_ext_key       = "gambatte_gb_palette_hardware";
+      palettes_ext_value     = palettes_hardware_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_HARDWARE;
    }
-   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK)
+   else if (palette_index <  NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_HARDWARE + NUM_PALETTES_NINTENDO_OFFICIAL)
    {
-      palettes_default_value = "Pink";
-      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE);
-      palettes_ext_key       = "gambatte_gb_palette_pink";
-      palettes_ext_value     = palettes_pink_opt_values[opt_index].value;
-      CurrentColorTotal      = NUM_PALETTES_PINK;
+      palettes_default_value = "Nintendo Official";
+      opt_index              = palette_index - (NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_HARDWARE);
+      palettes_ext_key       = "gambatte_gb_palette_nintendo_official";
+      palettes_ext_value     = palettes_nintendo_official_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_NINTENDO_OFFICIAL;
    }
-   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE)
+   else if (palette_index <  NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_HARDWARE + NUM_PALETTES_NINTENDO_OFFICIAL + NUM_PALETTES_EXTRAS)
    {
-      palettes_default_value = "Purple";
-      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK);
-      palettes_ext_key       = "gambatte_gb_palette_purple";
-      palettes_ext_value     = palettes_purple_opt_values[opt_index].value;
-      CurrentColorTotal      = NUM_PALETTES_PURPLE;
+      palettes_default_value = "Extras";
+      opt_index              = palette_index - (NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_HARDWARE + NUM_PALETTES_NINTENDO_OFFICIAL);
+      palettes_ext_key       = "gambatte_gb_palette_extras";
+      palettes_ext_value     = palettes_extras_opt_values[opt_index].value;
+      CurrentColorTotal      = NUM_PALETTES_EXTRAS;
    }
-   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED)
-   {
-      palettes_default_value = "Red";
-      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE);
-      palettes_ext_key       = "gambatte_gb_palette_red";
-      palettes_ext_value     = palettes_red_opt_values[opt_index].value;
-      CurrentColorTotal      = NUM_PALETTES_RED;
-   }
-   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED + NUM_PALETTES_YELLOW)
-   {
-      palettes_default_value = "Yellow";
-      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED);
-      palettes_ext_key       = "gambatte_gb_palette_yellow";
-      palettes_ext_value     = palettes_yellow_opt_values[opt_index].value;
-      CurrentColorTotal      = NUM_PALETTES_YELLOW;
-   }
-   else if (palette_index <  NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED + NUM_PALETTES_YELLOW + NUM_PALETTES_OTHERS)
+   else if (palette_index <  NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_HARDWARE + NUM_PALETTES_NINTENDO_OFFICIAL + NUM_PALETTES_EXTRAS + NUM_PALETTES_OTHERS)
    {
       palettes_default_value = "Others";
-      opt_index              = palette_index - (NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED + NUM_PALETTES_YELLOW);
+      opt_index              = palette_index - (NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_HARDWARE + NUM_PALETTES_NINTENDO_OFFICIAL + NUM_PALETTES_EXTRAS);
       palettes_ext_key       = "gambatte_gb_palette_others";
       palettes_ext_value     = palettes_others_opt_values[opt_index].value;
       CurrentColorTotal      = NUM_PALETTES_OTHERS;
    }
+ 
 
 
    /* Notify frontend of option value changes */
@@ -2159,9 +2068,9 @@ static void find_internal_palette(const unsigned short **palette, bool *is_gbc)
    if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
    {
       // Handle color packs
-      if (string_is_equal(var.value, "Realistic GB"))
+      if (string_is_equal(var.value, "Essentials"))
       {
-         var.key   = "gambatte_gb_palette_realistic_gb";
+         var.key   = "gambatte_gb_palette_essentials";
          var.value = NULL;
 
          if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
@@ -2169,75 +2078,36 @@ static void find_internal_palette(const unsigned short **palette, bool *is_gbc)
 
          // Determine 'consolidated' palette index
          if (palette_title)
-            index = RHMAP_GET_STR(palettes_realistic_gb_index_map, palette_title);
+            index = RHMAP_GET_STR(palettes_essentials_index_map, palette_title);
          if (index > 0)
             index--;
          internal_palette_index = index;
       }
-      else if (string_is_equal(var.value, "Blue"))
+      else if (string_is_equal(var.value, "Subtle"))
       {
-         var.key   = "gambatte_gb_palette_blue";
+         var.key   = "gambatte_gb_palette_subtle";
          var.value = NULL;
 
          if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
             palette_title = var.value;
          if (palette_title)
-            index = RHMAP_GET_STR(palettes_blue_index_map, palette_title);
+            index = RHMAP_GET_STR(palettes_subtle_index_map, palette_title);
          if (index > 0)
             index--;
-         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB;
+         internal_palette_index = index + NUM_PALETTES_ESSENTIALS;
       }
-      else if (string_is_equal(var.value, "Brown"))
+      else if (string_is_equal(var.value, "Single Color"))
       {
-         var.key   = "gambatte_gb_palette_brown";
+         var.key   = "gambatte_gb_palette_Single_Color";
          var.value = NULL;
 
          if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
             palette_title = var.value;
          if (palette_title)
-            index = RHMAP_GET_STR(palettes_brown_index_map, palette_title);
+            index = RHMAP_GET_STR(palettes_single_color_index_map, palette_title);
          if (index > 0)
             index--;
-         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE;
-      }
-      else if (string_is_equal(var.value, "Gray"))
-      {
-         var.key   = "gambatte_gb_palette_gray";
-         var.value = NULL;
-
-         if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
-            palette_title = var.value;
-         if (palette_title)
-            index = RHMAP_GET_STR(palettes_gray_index_map, palette_title);
-         if (index > 0)
-            index--;
-         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN;
-      }
-      else if (string_is_equal(var.value, "Green"))
-      {
-         var.key   = "gambatte_gb_palette_green";
-         var.value = NULL;
-
-         if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
-            palette_title = var.value;
-         if (palette_title)
-            index = RHMAP_GET_STR(palettes_green_index_map, palette_title);
-         if (index > 0)
-            index--;
-         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY;
-      }
-      else if (string_is_equal(var.value, "Inverted"))
-      {
-         var.key   = "gambatte_gb_palette_inverted";
-         var.value = NULL;
-
-         if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
-            palette_title = var.value;
-         if (palette_title)
-            index = RHMAP_GET_STR(palettes_inverted_index_map, palette_title);
-         if (index > 0)
-            index--;
-         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN;
+         internal_palette_index = index + NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE;
       }
       else if (string_is_equal(var.value, "Multicolor"))
       {
@@ -2250,72 +2120,46 @@ static void find_internal_palette(const unsigned short **palette, bool *is_gbc)
             index = RHMAP_GET_STR(palettes_multicolor_index_map, palette_title);
          if (index > 0)
             index--;
-         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED;
+         internal_palette_index = index + NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR;
       }
-      else if (string_is_equal(var.value, "Orange"))
+      else if (string_is_equal(var.value, "Hardware"))
       {
-         var.key   = "gambatte_gb_palette_orange";
+         var.key   = "gambatte_gb_palette_hardware";
          var.value = NULL;
 
          if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
             palette_title = var.value;
          if (palette_title)
-            index = RHMAP_GET_STR(palettes_orange_index_map, palette_title);
+            index = RHMAP_GET_STR(palettes_hardware_index_map, palette_title);
          if (index > 0)
             index--;
-         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR;
+         internal_palette_index = index + NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR;
       }
-      else if (string_is_equal(var.value, "Pink"))
+      else if (string_is_equal(var.value, "Nintendo Official"))
       {
-         var.key   = "gambatte_gb_palette_pink";
+         var.key   = "gambatte_gb_palette_nintendo_official";
          var.value = NULL;
 
          if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
             palette_title = var.value;
          if (palette_title)
-            index = RHMAP_GET_STR(palettes_pink_index_map, palette_title);
+            index = RHMAP_GET_STR(palettes_nintendo_official_index_map, palette_title);
          if (index > 0)
             index--;
-         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE;
+         internal_palette_index = index + NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_HARDWARE;
       }
-      else if (string_is_equal(var.value, "Purple"))
+      else if (string_is_equal(var.value, "Extras"))
       {
-         var.key   = "gambatte_gb_palette_purple";
+         var.key   = "gambatte_gb_palette_extras";
          var.value = NULL;
 
          if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
             palette_title = var.value;
          if (palette_title)
-            index = RHMAP_GET_STR(palettes_purple_index_map, palette_title);
+            index = RHMAP_GET_STR(palettes_extras_index_map, palette_title);
          if (index > 0)
             index--;
-         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK;
-      }
-      else if (string_is_equal(var.value, "Red"))
-      {
-         var.key   = "gambatte_gb_palette_red";
-         var.value = NULL;
-
-         if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
-            palette_title = var.value;
-         if (palette_title)
-            index = RHMAP_GET_STR(palettes_red_index_map, palette_title);
-         if (index > 0)
-            index--;
-         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE;
-      }
-      else if (string_is_equal(var.value, "Yellow"))
-      {
-         var.key   = "gambatte_gb_palette_yellow";
-         var.value = NULL;
-
-         if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
-            palette_title = var.value;
-         if (palette_title)
-            index = RHMAP_GET_STR(palettes_yellow_index_map, palette_title);
-         if (index > 0)
-            index--;
-         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED;
+         internal_palette_index = index + NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_HARDWARE + NUM_PALETTES_NINTENDO_OFFICIAL;
       }
       else if (string_is_equal(var.value, "Others"))
       {
@@ -2328,14 +2172,14 @@ static void find_internal_palette(const unsigned short **palette, bool *is_gbc)
             index = RHMAP_GET_STR(palettes_others_index_map, palette_title);
          if (index > 0)
             index--;
-         internal_palette_index = index + NUM_PALETTES_REALISTIC_GB + NUM_PALETTES_BLUE + NUM_PALETTES_BROWN + NUM_PALETTES_GRAY + NUM_PALETTES_GREEN + NUM_PALETTES_INVERTED + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_ORANGE + NUM_PALETTES_PINK + NUM_PALETTES_PURPLE + NUM_PALETTES_RED + NUM_PALETTES_YELLOW;
+         internal_palette_index = index + NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_HARDWARE + NUM_PALETTES_NINTENDO_OFFICIAL + NUM_PALETTES_EXTRAS;
       }
       else
       {
          palette_title = var.value;
 
          // Determine 'consolidated' palette index
-         index = RHMAP_GET_STR(palettes_realistic_gb_index_map, palette_title);
+         index = RHMAP_GET_STR(palettes_essentials_index_map, palette_title);
          if (index > 0)
             index--;
          internal_palette_index = index;

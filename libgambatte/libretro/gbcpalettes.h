@@ -2069,6 +2069,256 @@ static const unsigned short Jeltron_GB_DMG[] = {
 	PACK15_4(0x868612, 0x557837, 0x335038, 0x1E3931)
 };
 
+
+
+
+static const unsigned short B_Brick_and_Mortar[] = {
+PACK15_4(0xDEFFF2, 0xB79BB6, 0x854B39, 0x090B20),
+PACK15_4(0xDEFFF2, 0xB79BB6, 0x854B39, 0x090B20),
+PACK15_4(0xDEFFF2, 0xB79BB6, 0x854B39, 0x090B20)
+};
+
+
+static const unsigned short B_Cyber_Lipstick[] = {
+PACK15_4(0xC8F6FF, 0xCD73A0, 0x982568, 0x003C4E),
+PACK15_4(0xC8F6FF, 0xCD73A0, 0x982568, 0x00212B),
+PACK15_4(0xC8F6FF, 0xCD73A0, 0x982568, 0x00212B)
+};
+
+
+static const unsigned short B_DoubleRainbowOMG[] = {
+PACK15_4(0xfeffa5, 0xFF7450, 0xb534d1, 0x000000),
+PACK15_4(0xC0FFC9, 0x47b1fb, 0x8659D3, 0x0e062a),
+PACK15_4(0xC0FFC9, 0x47b1fb, 0x8659D3, 0x0e062a)
+};
+
+
+static const unsigned short B_Dreamland_cool[] = {
+PACK15_4(0xdef2f6, 0x70cec4, 0x70579c, 0x0a0912),
+PACK15_4(0xffffff, 0xe096a8, 0x70579c, 0x0a0912),
+PACK15_4(0xffffff, 0xe096a8, 0x70579c, 0x0a0912)
+};
+
+
+static const unsigned short B_Dreamland_Warm[] = {
+PACK15_4(0xdef2f6, 0xe096a8, 0x70579c, 0x0a0912),
+PACK15_4(0xffffff, 0xe096a8, 0x70579c, 0x0a0912),
+PACK15_4(0xffffff, 0xe096a8, 0x70579c, 0x0a0912)
+};
+
+
+static const unsigned short B_Electric_blue[] = {
+PACK15_4(0xf5ffa5, 0x67cc78, 0x272eb2, 0x28004e),
+PACK15_4(0xffe9a5, 0x67cc78, 0x272eb2, 0x28004e),
+PACK15_4(0xffe9a5, 0x67cc78, 0x272eb2, 0x28004e)
+};
+
+
+static const unsigned short B_Electric_purple[] = {
+PACK15_4(0xb5ff7a, 0x45a5ff, 0x704b9e, 0x2c0520),
+PACK15_4(0xfff99c, 0xac5cc0, 0x3865c0, 0x000000),
+PACK15_4(0xfff99c, 0xac5cc0, 0x3865c0, 0x000000)
+};
+
+
+static const unsigned short B_Emerald_Hills[] = {
+PACK15_4(0x57fff5, 0x48c3b6, 0x4a8d6b, 0x3f1a0f),
+PACK15_4(0xf0ebd8, 0x5c82ed, 0x861e3b, 0x000000),
+PACK15_4(0xf0ebd8, 0x5c82ed, 0x861e3b, 0x000000)
+};
+
+
+static const unsigned short B_GB_Studio[] = {
+PACK15_4(0xE0F8CF, 0x86C06C, 0x306850, 0x071821),
+PACK15_4(0xE0F8CF, 0x86C06C, 0x306850, 0x071821),
+PACK15_4(0xE0F8CF, 0x86C06C, 0x306850, 0x071821)
+};
+
+
+static const unsigned short B_Gold[] = {
+PACK15_4(0xFFF1B5, 0xCDAE55, 0x7C433F, 0x20081B),
+PACK15_4(0xF5FFCE, 0xCDAE55, 0x7C433F, 0x20081B),
+PACK15_4(0xF5FFCE, 0xCDAE55, 0x7C433F, 0x20081B)
+};
+
+
+static const unsigned short B_Imperial_Purple[] = {
+PACK15_4(0xffffff, 0xff7979, 0x5a1997, 0x1e1e32),
+PACK15_4(0xffffff, 0xff7979, 0x5a1997, 0x1e1e32),
+PACK15_4(0xffffff, 0xff7979, 0x5a1997, 0x1e1e32)
+};
+
+
+static const unsigned short B_Inferno[] = {
+PACK15_4(0xFFDB83, 0xEF6A0D, 0xC60600, 0x6C0300),
+PACK15_4(0xFFFFFF, 0xEF6A0D, 0xC60600, 0x6C0300),
+PACK15_4(0xFFFFFF, 0xEF6A0D, 0xC60600, 0x6C0300)
+};
+
+
+static const unsigned short B_Ketchup_Mustard[] = {
+PACK15_4(0xFFEFE3, 0xc2b451, 0x81292f, 0x000018),
+PACK15_4(0xFFEFE3, 0xc2b451, 0x81292f, 0x000018),
+PACK15_4(0xFFEFE3, 0xc2b451, 0x81292f, 0x000018)
+};
+
+
+static const unsigned short B_Magma[] = {
+PACK15_4(0xFFFDDE, 0xE49F58, 0xA73B3B, 0x411956),
+PACK15_4(0xFFFDDE, 0xE49F58, 0xA73B3B, 0x411956),
+PACK15_4(0xFFFDDE, 0xE49F58, 0xA73B3B, 0x411956)
+};
+
+
+static const unsigned short B_Meatball[] = {
+PACK15_4(0xE1D9C1, 0xD89048, 0xA82820, 0x1D0E36),
+PACK15_4(0xF8E8C8, 0xD89048, 0xA82820, 0x1D0E36),
+PACK15_4(0xF8E8C8, 0xD89048, 0xA82820, 0x1D0E36)
+};
+
+
+static const unsigned short B_MsPac[] = {
+PACK15_4(0xC1DDD7, 0x5F8BF1, 0x903F9C, 0x001651),
+PACK15_4(0xFFE576, 0xFF664A, 0xC83665, 0x000000),
+PACK15_4(0xFFE576, 0xFF664A, 0xC83665, 0x000000)
+};
+
+
+static const unsigned short B_Mutant[] = {
+PACK15_4(0xC6FFAD, 0x73CD91, 0x068E62, 0x1C004E),
+PACK15_4(0xFBFFAD, 0x73CD91, 0x068E62, 0x1C004E),
+PACK15_4(0xFBFFAD, 0x73CD91, 0x068E62, 0x1C004E)
+};
+
+
+static const unsigned short B_Natural[] = {
+PACK15_4(0xFEFFEE, 0xC19B95, 0x705773, 0x2F0026),
+PACK15_4(0xFEFFEE, 0xCE9D84, 0x705773, 0x2F0026),
+PACK15_4(0xFEFFEE, 0xCE9D84, 0x705773, 0x2F0026)
+};
+
+
+static const unsigned short B_Neapolitan[] = {
+PACK15_4(0xFFEEE5, 0x9DD4AE, 0x7E5C5A, 0x000000),
+PACK15_4(0xFFEEE5, 0x9DD4AE, 0x7E5C5A, 0x000000),
+PACK15_4(0xFFEEE5, 0x9DD4AE, 0x7E5C5A, 0x000000)
+};
+
+
+static const unsigned short B_Night_Life[] = {
+PACK15_4(0xCBFFC8, 0xCD73A0, 0x4268AB, 0x003C4E),
+PACK15_4(0xCBFFC8, 0xCD73A0, 0x4268AB, 0x003C4E),
+PACK15_4(0xCBFFC8, 0xCD73A0, 0x4268AB, 0x003C4E)
+};
+
+
+static const unsigned short B_Pistachio[] = {
+PACK15_4(0xD2FFB5, 0x6FDB6F, 0x40A47A, 0x072451),
+PACK15_4(0xFFFBD9, 0xE5B087, 0xB34472, 0x280010),
+PACK15_4(0xFFFBD9, 0xE5B087, 0xB34472, 0x280010)
+};
+
+
+static const unsigned short B_Pretty_in_Pink[] = {
+PACK15_4(0xEFF7F8, 0xE08EB4, 0x647A9B, 0x1C004E),
+PACK15_4(0xEFF7F8, 0xE08EB4, 0x647A9B, 0x1C004E),
+PACK15_4(0xEFF7F8, 0xE08EB4, 0x647A9B, 0x1C004E)
+};
+
+
+static const unsigned short B_Rainbow[] = {
+PACK15_4(0xC0FFC9, 0x47b1fb, 0x8659D3, 0x0e062a),
+PACK15_4(0xfeffa5, 0xFF7450, 0xb534d1, 0x000000),
+PACK15_4(0xfeffa5, 0xFF7450, 0xb534d1, 0x000000)
+};
+
+
+static const unsigned short B_Raisin[] = {
+PACK15_4(0xD8E8FF, 0xB2ABC9, 0x894D65, 0x261414),
+PACK15_4(0xFCFFD8, 0xAF8792, 0x894D65, 0x000000),
+PACK15_4(0xFCFFD8, 0xAF8792, 0x894D65, 0x000000)
+};
+
+
+static const unsigned short B_RedDevil[] = {
+PACK15_4(0xE7FFA0, 0x5FD4E0, 0x712DD7, 0x360025),
+PACK15_4(0xFF7E71, 0xD02F1E, 0x950A58, 0x000000),
+PACK15_4(0xFF7E71, 0xD02F1E, 0x950A58, 0x000000)
+};
+
+
+static const unsigned short B_Red_skies_at_night[] = {
+PACK15_4(0xffb699, 0xAD95CF, 0x687D9C, 0x000000),
+PACK15_4(0x8AA1C2, 0x5a7192, 0x333c69, 0x000000),
+PACK15_4(0x8AA1C2, 0x5a7192, 0x333c69, 0x000000)
+};
+
+
+static const unsigned short B_Silver_Cool[] = {
+PACK15_4(0xE0FEEC, 0x8ABEB7, 0x6B7B9A, 0x3E2144),
+PACK15_4(0xE0FEEC, 0x8ABEB7, 0x6B7B9A, 0x3E2144),
+PACK15_4(0xE0FEEC, 0x8ABEB7, 0x6B7B9A, 0x3E2144)
+};
+
+
+static const unsigned short B_Silver_Warm[] = {
+PACK15_4(0xF5ECD7, 0xA9B1A3, 0x5C5E4C, 0x00203F),
+PACK15_4(0xF5ECD7, 0xA9B1A3, 0x5C5E4C, 0x00203F),
+PACK15_4(0xF5ECD7, 0xA9B1A3, 0x5C5E4C, 0x00203F)
+};
+
+
+static const unsigned short B_Sour_Tart[] = {
+PACK15_4(0xCBFFC8, 0xCD73A0, 0xA73B3B, 0x3F3666),
+PACK15_4(0xCBFFC8, 0xCD73A0, 0xA73B3B, 0x3F3666),
+PACK15_4(0xCBFFC8, 0xCD73A0, 0xA73B3B, 0x3F3666)
+};
+
+
+static const unsigned short B_Under_Construction[] = {
+PACK15_4(0xF5ECD7, 0xE68F64, 0xA52E49, 0x291430),
+PACK15_4(0xF5ECD7, 0xE68F64, 0xA52E49, 0x291430),
+PACK15_4(0xF5ECD7, 0xE68F64, 0xA52E49, 0x291430)
+};
+
+
+static const unsigned short B_WarmCool[] = {
+PACK15_4(0xefebe5, 0xd29c46, 0x6a78a7, 0x000000),
+PACK15_4(0xffffff, 0xe17f20, 0x6a78a7, 0x000000),
+PACK15_4(0xffffff, 0xe17f20, 0x6a78a7, 0x000000)
+};
+
+static const unsigned short Fool_s_Gold_and_Silver[] = {
+PACK15_4(0xC5C66D, 0x97A1B0, 0x585E67, 0x232529),
+PACK15_4(0xC5C66D, 0x97A1B0, 0x585E67, 0x232529),
+PACK15_4(0xC5C66D, 0x97A1B0, 0x585E67, 0x232529)
+};
+
+static const unsigned short Mario_Maker[] = {
+PACK15_4(0xFACD00, 0xBF9C00, 0x756000, 0x2C2400),
+PACK15_4(0xFACD00, 0xBF9C00, 0x756000, 0x2C2400),
+PACK15_4(0xFACD00, 0xBF9C00, 0x756000, 0x2C2400)
+};
+
+static const unsigned short Pac_Palette[] = {
+PACK15_4(0xFFD800, 0xFF8C00, 0xDC0000, 0x420000),
+PACK15_4(0xFFD800, 0xFF8C00, 0xDC0000, 0x420000),
+PACK15_4(0xFFD800, 0xFF8C00, 0xDC0000, 0x420000)
+};
+
+static const unsigned short Idol_World_tricolor[] = {
+PACK15_4(0xFFD800, 0xFF8C00, 0xDC0000, 0x420000),
+PACK15_4(0xFFD800, 0xFF8C00, 0xDC0000, 0x420000),
+PACK15_4(0xFFD800, 0xFF8C00, 0xDC0000, 0x420000)
+};
+
+static const unsigned short Tropical_Starfall[] = {
+PACK15_4(0x63FDFB, 0xEF58F7, 0x4344C1, 0x141439),
+PACK15_4(0x63FDFB, 0xEF58F7, 0x4344C1, 0x141439),
+PACK15_4(0x63FDFB, 0xEF58F7, 0x4344C1, 0x141439)
+};
+
+
 	// from twb64 (Olywa selection)
 static const unsigned short Cheetos[] = {    //orange
 	PACK15_4(0xE57600, 0xAF5A00, 0x6B3700, 0x281400),
@@ -2542,6 +2792,48 @@ static const GbcPaletteEntry gbcDirPalettes[] = {
 		// From Jeltron
 	{ "Jeltron Greenscale", Jeltron_Greenscale },    //GB
 	{ "Jeltron GB-DMG", Jeltron_GB_DMG },            //GB
+
+	{ "B_Brick_and_Mortar",B_Brick_and_Mortar },
+	{ "B_Cyber_Lipstick",B_Cyber_Lipstick },
+	{ "B_DoubleRainbowOMG",B_DoubleRainbowOMG },
+	{ "B_Dreamland_cool",B_Dreamland_cool },
+	{ "B_Dreamland_Warm",B_Dreamland_Warm },
+	{ "B_Electric_blue",B_Electric_blue },
+	{ "B_Electric_purple",B_Electric_purple },
+	{ "B_Emerald_Hills",B_Emerald_Hills },
+	{ "B_GB_Studio",B_GB_Studio },
+	{ "B_Gold",B_Gold },
+	{ "B_Imperial_Purple",B_Imperial_Purple },
+	{ "B_Inferno",B_Inferno },
+	{ "B_Ketchup_Mustard",B_Ketchup_Mustard },
+	{ "B_Magma",B_Magma },
+	{ "B_Meatball",B_Meatball },
+	{ "B_MsPac",B_MsPac },
+	{ "B_Mutant",B_Mutant },
+	{ "B_Natural",B_Natural },
+	{ "B_Neapolitan",B_Neapolitan },
+	{ "B_Night_Life",B_Night_Life },
+	{ "B_Pistachio",B_Pistachio },
+	{ "B_Pretty_in_Pink",B_Pretty_in_Pink },
+	{ "B_Rainbow",B_Rainbow },
+	{ "B_Raisin",B_Raisin },
+	{ "B_RedDevil",B_RedDevil },
+	{ "B_Red_skies_at_night",B_Red_skies_at_night },
+	{ "B_Silver_Cool",B_Silver_Cool },
+	{ "B_Silver_Warm",B_Silver_Warm },
+	{ "B_Sour_Tart",B_Sour_Tart },
+	{ "B_Under_Construction",B_Under_Construction },
+	{ "B_WarmCool",B_WarmCool },
+	{ "Fool s Gold and Silver",Fool_s_Gold_and_Silver },
+	{ "Mario Maker",Mario_Maker },
+	{ "Pac Palette",Pac_Palette },
+	{ "Idol World tricolor",Idol_World_tricolor },
+	{ "Tropical Starfall",Tropical_Starfall },
+
+
+	//////////////////////////////////////////////
+
+
 		// from twb64 (Olywa selection)
 	{ "Cheetos", Cheetos }, //orange
 	{ "Kingdom Key Gold", Kingdom_Key_Gold },    //Yellow
