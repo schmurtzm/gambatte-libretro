@@ -1,4 +1,4 @@
-# Gambatte - Libretro Core - with advanced color organisation for palettes
+# Gambatte - Libretro Core - with 'palette style' color organisation
 ---------------------------------------------------------------------
 
 
@@ -9,7 +9,7 @@ What is this new palettes organization ?
 The palettes organization of this Gambatte Core has been done to allow the user to navigate and choose his favorite palette in an easier way.
 
 Note that there are 2 branches with 2 different organization :
- - This current one is an organization by kind (Essentials, Subtle, Single_Color, Multicolor, Hardware, Nintendo_Official, Extras, Others)
+ - This current one is an organization by palette style (Essentials, Subtle, Single_Color, Multicolor, Hardware, Nintendo_Official, Extras, Others)
 
 - [The simple color organisation](https://github.com/schmurtzm/gambatte-libretro/tree/simple-color-organisation) is an organization of palettes by color (essentials, blue, brown, gray, green, inverted, multicolore, orange, pink, purple, red, yellow, others)
 
@@ -25,36 +25,38 @@ Why ?
 The work on these palettes is awesome but due to the enormous number of palettes included in Gambatte core, it becomes very hard to navigate, find and choose a palette for the user. 
 
 
-How this palettes organization is organized ?
+How this palettes style order is organized ?
 ------------------------------------------
 
 This palette organization is simply done by categories of colors :
- - Essentials : This category contains the essential palettes.
+ - Essentials: Quick access to palettes that people most frequently want to use to do things like simulate DMG, GBC, bivert & grayscale.
 > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/0_Essentials.jpg" height="200">  
- - Subtle : palettes with Subtle color
+ - Subtle: Palettes that are lower in saturation or contrast and create a nice effect that works across many games.
 > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/1_Subtle.jpg" height="200">  
- - Single Color : only one main color
+ - Single Color: Palettes that have one bright color. Palettes were selected to enable both having a solid background color and having a light background with the art itself appearing to be colored.
 > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/2_Single_Color.jpg" height="250">  
- - Multicolor : palettes with multiple colors
+ - Multicolor: Palettes that achieve a colorization effect for games. If you would like to feel like the game is full-color, this is best category to try. Contains palettes that work well with Mario, Wario, Kirby and other popular games.
 > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/3_Multicolor.jpg" height="200">  
- - Hardware : palettes wchich copie the behavior of other hardwares.
+ - Hardware : Palettes which simulate different devices.
 > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/4_Hardware.jpg" height="200">  
- - Nintendo Official: this category contains official Nintendo's palettes.
+ - Nintendo Official: this category contains official Nintendo's palettes for GBC and SGB.
 > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/5_Nintendo_Official.jpg" height="400">  
- - Extras : this category contains the selected palettes from [The simple color organisation](https://github.com/schmurtzm/gambatte-libretro/tree/simple-color-organisation) which have not been retained in this advanced selection. This category is ordered by colors (realistic_gb, blue, brown, gray, green, inverted, multicolore, orange, pink, purple, red, yellow) .
+ - Extras : this category contains the palettes from [The simple color organisation](https://github.com/schmurtzm/gambatte-libretro/tree/simple-color-organisation) which have not been retained in this curated selection. This category is ordered by colors (realistic_gb, blue, brown, gray, green, inverted, multicolore, orange, pink, purple, red, yellow)
  > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/6_Extras.jpg" height="750">  
  - Others : this category contains other palettes which are similar to the ones in the previous categories. This is a kind of basket for the old original palettes which haven't been retain in the above selection.
  > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/7_Others.jpg" height="950">  
  
  
-How this palettes organization has been done ?
-------------------------------------------
+How has the curation been done?
+-------------------------------
 
-For each category all similar palettes have been reduced to one choice. 
+For similar palettes, the best one has been chosen based on both readability and color ramping. All categories have been organized to progress through the color spectrum as best as can be managed starting with the color green.
+
 
 For nostalgic people, the majority of the old palettes are in the "Extra" and "Others" categories, so if you miss one you'll probably find it here.
 
 To be categorized first a screenshot of each palette has been done (Credits Totofaki from Onion Team)
+How to use this new palette organization ?
 
 
 
