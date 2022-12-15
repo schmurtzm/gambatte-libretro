@@ -30,21 +30,21 @@ How this palettes organization is organized ?
 
 This palette organization is simply done by categories of colors :
  - Essentials : This category contains the essential palettes.
-> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/0_Essentials.jpg" height="200">  
+> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/0_Essentials.jpg" height="200">  
  - Subtle : palettes with Subtle color
-> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/1_Subtle.jpg" height="200">  
+> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/1_Subtle.jpg" height="200">  
  - Single Color : only one main color
-> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/2_Single_Color.jpg" height="200">  
+> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/2_Single_Color.jpg" height="250">  
  - Multicolor : palettes with multiple colors
-> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/3_Multicolor.jpg" height="200">  
+> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/3_Multicolor.jpg" height="200">  
  - Hardware : palettes wchich copie the behavior of other hardwares.
-> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/4_Hardware.jpg" height="200">  
+> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/4_Hardware.jpg" height="200">  
  - Nintendo Official: this category contains official Nintendo's palettes.
-> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/5_Nintendo_Official.jpg" height="200">  
+> <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/5_Nintendo_Official.jpg" height="400">  
  - Extras : this category contains the selected palettes from [The simple color organisation](https://github.com/schmurtzm/gambatte-libretro/tree/simple-color-organisation) which have not been retained in this advanced selection. This category is ordered by colors (realistic_gb, blue, brown, gray, green, inverted, multicolore, orange, pink, purple, red, yellow) .
- > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/6_Extras.jpg" height="200">  
+ > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/6_Extras.jpg" height="750">  
  - Others : this category contains other palettes which are similar to the ones in the previous categories. This is a kind of basket for the old original palettes which haven't been retain in the above selection.
- > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20simple%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/7_Others.jpg" height="200">  
+ > <img src="https://raw.githubusercontent.com/schmurtzm/gambatte-libretro/advanced-color-organisation/palette%20-%20advanced%20color%20organisation/02%20-%20New%20Palette%20Oganisation/__Preview%20Generator/preview/7_Others.jpg" height="950">  
  
  
 How this palettes organization has been done ?
