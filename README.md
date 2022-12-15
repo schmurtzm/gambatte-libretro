@@ -12,10 +12,10 @@ The palettes organization of this Gambatte Core has been done to allow the user 
 
 Note that there are 2 branches with 2 different organization :
 - [The simple color oraganisation](https://github.com/schmurtzm/gambatte-libretro/tree/simple-color-organisation) is an organization of palettes by color (realistic_gb, blue, brown, gray, green, inverted, multicolore, orange, pink, purple, red, yellow, others)
-- [The advanced color oraganisation](https://github.com/schmurtzm/gambatte-libretro/tree/advanced-color-organisation) is an organization by kind (Basics, Colorize, Muted, Monochrome, Hardware, Game-Specific, Experimental, Extras)
+- [The advanced color oraganisation](https://github.com/schmurtzm/gambatte-libretro/tree/advanced-color-organisation) is an organization by palette style (essentials, blue, brown, gray, green, inverted, multicolore, orange, pink, purple, red, yellow, others)
 
 (!! This current master branch doesnt not contains color modifications !! 
-Click [here for the advanced color oraganisation](https://github.com/schmurtzm/gambatte-libretro/tree/simple-color-organisation) and [here for The advanced color oraganisation](https://github.com/schmurtzm/gambatte-libretro/tree/advanced-color-organisation))
+Click [here for the simple color oraganisation](https://github.com/schmurtzm/gambatte-libretro/tree/simple-color-organisation) and [here for The palette style color oraganisation](https://github.com/schmurtzm/gambatte-libretro/tree/advanced-color-organisation))
 
 Why ?
 ------
