@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        ref: Miyoo-Mini_advanced-color-organisation
+        ref: advanced-color-organisation
     - name: Checkout & build the repo in buildroot
       run: |
         docker run \
