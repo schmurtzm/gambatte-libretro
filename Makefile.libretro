@@ -1,6 +1,8 @@
 DEBUG = 0
 HAVE_NETWORK = 0
 VIDEO_RGB565 = 1
+CFLAGS += -DHAVE_NO_LANGEXTRA
+CXXFLAGS += -DHAVE_NO_LANGEXTRA
 
 SPACE :=
 SPACE := $(SPACE) $(SPACE)
@@ -91,6 +93,24 @@ ifneq (,$(findstring unix,$(platform)))
          CFLAGS += -mcpu=cortex-a72 -mtune=cortex-a72
       endif
    endif
+
+# Miyoo Mini ####################
+else ifeq ($(platform), miyoomini)
+	TARGET := $(TARGET_NAME)_libretro.so
+	CC = $(CROSS_COMPILE)gcc
+	CXX = $(CROSS_COMPILE)g++
+	AR = $(CROSS_COMPILE)ar
+	SHARED := -shared -Wl,--version-script=$(version_script)
+	LDFLAGS += -fPIC -flto
+	PLATFORM_DEFINES := -DCC_RESAMPLER -DCC_RESAMPLER_NO_HIGHPASS
+	CFLAGS += -marm -mtune=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=hard -march=armv7ve
+	CFLAGS += -fomit-frame-pointer -ffast-math -fPIC -flto
+	CXXFLAGS += $(CFLAGS)
+	# facultative : we remove core translations for smaller size.
+	CFLAGS += -DHAVE_NO_LANGEXTRA
+	CXXFLAGS += -DHAVE_NO_LANGEXTRA
+	HAVE_NETWORK = 0
+
 
 # Classic Platforms ####################
 # Platform affix = classic_<ISA>_<µARCH>
