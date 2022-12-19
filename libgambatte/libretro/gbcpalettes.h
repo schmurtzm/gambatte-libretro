@@ -2307,9 +2307,9 @@ PACK15_4(0xFFD800, 0xFF8C00, 0xDC0000, 0x420000)
 };
 
 static const unsigned short Idol_World_tricolor[] = {
-PACK15_4(0xFFD800, 0xFF8C00, 0xDC0000, 0x420000),
-PACK15_4(0xFFD800, 0xFF8C00, 0xDC0000, 0x420000),
-PACK15_4(0xFFD800, 0xFF8C00, 0xDC0000, 0x420000)
+PACK15_4(0xFFC30B, 0xF34F6D, 0x2681C8, 0x0B263C),
+PACK15_4(0xFFC30B, 0xF34F6D, 0x2681C8, 0x0B263C),
+PACK15_4(0xFFC30B, 0xF34F6D, 0x2681C8, 0x0B263C)
 };
 
 static const unsigned short Tropical_Starfall[] = {
@@ -2790,40 +2790,41 @@ static const GbcPaletteEntry gbcDirPalettes[] = {
 	{ "Wish", pixelshift_45_wish },
 	// Adding some custom palettes from Onion Team
 		// From Jeltron
-	{ "Jeltron Greenscale", Jeltron_Greenscale },    //GB
-	{ "Jeltron GB-DMG", Jeltron_GB_DMG },            //GB
+	{ "Greenscale", Jeltron_Greenscale },    //GB
+	{ "GB-DMG", Jeltron_GB_DMG },            //GB
 
-	{ "B_Brick_and_Mortar",B_Brick_and_Mortar },
-	{ "B_Cyber_Lipstick",B_Cyber_Lipstick },
-	{ "B_DoubleRainbowOMG",B_DoubleRainbowOMG },
-	{ "B_Dreamland_cool",B_Dreamland_cool },
-	{ "B_Dreamland_Warm",B_Dreamland_Warm },
-	{ "B_Electric_blue",B_Electric_blue },
-	{ "B_Electric_purple",B_Electric_purple },
-	{ "B_Emerald_Hills",B_Emerald_Hills },
-	{ "B_GB_Studio",B_GB_Studio },
-	{ "B_Gold",B_Gold },
-	{ "B_Imperial_Purple",B_Imperial_Purple },
-	{ "B_Inferno",B_Inferno },
-	{ "B_Ketchup_Mustard",B_Ketchup_Mustard },
-	{ "B_Magma",B_Magma },
-	{ "B_Meatball",B_Meatball },
-	{ "B_MsPac",B_MsPac },
-	{ "B_Mutant",B_Mutant },
-	{ "B_Natural",B_Natural },
-	{ "B_Neapolitan",B_Neapolitan },
-	{ "B_Night_Life",B_Night_Life },
-	{ "B_Pistachio",B_Pistachio },
-	{ "B_Pretty_in_Pink",B_Pretty_in_Pink },
-	{ "B_Rainbow",B_Rainbow },
-	{ "B_Raisin",B_Raisin },
-	{ "B_RedDevil",B_RedDevil },
-	{ "B_Red_skies_at_night",B_Red_skies_at_night },
-	{ "B_Silver_Cool",B_Silver_Cool },
-	{ "B_Silver_Warm",B_Silver_Warm },
-	{ "B_Sour_Tart",B_Sour_Tart },
-	{ "B_Under_Construction",B_Under_Construction },
-	{ "B_WarmCool",B_WarmCool },
+	{ "Brick and Mortar",B_Brick_and_Mortar },
+	{ "Cyber Lipstick",B_Cyber_Lipstick },
+	{ "Double Rainbow OMG",B_DoubleRainbowOMG },
+	{ "Dreamland Cool",B_Dreamland_cool },
+	{ "Dreamland Warm",B_Dreamland_Warm },
+	{ "Electric Blue",B_Electric_blue },
+	{ "Electric Purple",B_Electric_purple },
+	{ "Emerald Hills",B_Emerald_Hills },
+	{ "GB Studio",B_GB_Studio },
+	{ "Gold",B_Gold },
+	{ "Imperial Purple",B_Imperial_Purple },
+	{ "Inferno",B_Inferno },
+	{ "Ketchup & Mustard",B_Ketchup_Mustard },
+	{ "Magma",B_Magma },
+	{ "Meatball",B_Meatball },
+	{ "MsPac",B_MsPac },
+	{ "Mutant",B_Mutant },
+	{ "Natural",B_Natural },
+	{ "Neapolitan",B_Neapolitan },
+	{ "Night Life",B_Night_Life },
+	{ "Pistachio",B_Pistachio },
+	{ "Pretty in Pink",B_Pretty_in_Pink },
+	{ "Rainbow",B_Rainbow },
+	{ "Raisin",B_Raisin },
+	{ "RedDevil",B_RedDevil },
+	{ "Red Skies At Night",B_Red_skies_at_night },
+	{ "Silver Cool",B_Silver_Cool },
+	{ "Silver Warm",B_Silver_Warm },
+	{ "Sour Tart",B_Sour_Tart },
+	{ "Under Construction",B_Under_Construction },
+	{ "WarmCool",B_WarmCool },
+	
 	{ "Fool s Gold and Silver",Fool_s_Gold_and_Silver },
 	{ "Mario Maker",Mario_Maker },
 	{ "Pac Palette",Pac_Palette },

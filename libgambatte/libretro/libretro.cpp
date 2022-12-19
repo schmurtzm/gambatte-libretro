@@ -357,13 +357,13 @@ static unsigned palette_switch_counter = 0;
  *   hardcoded anyway... */
 //#define NUM_PALETTES_DEFAULT       0
 #define NUM_PALETTES_ESSENTIALS      8
-#define NUM_PALETTES_SUBTLE      21
+#define NUM_PALETTES_SUBTLE      20
 #define NUM_PALETTES_SINGLE_COLOR  25
-#define NUM_PALETTES_MULTICOLOR  24
+#define NUM_PALETTES_MULTICOLOR  26
 #define NUM_PALETTES_HARDWARE          15
 #define NUM_PALETTES_NINTENDO_OFFICIAL             47
-#define NUM_PALETTES_EXTRAS          88
-#define NUM_PALETTES_OTHERS            113
+#define NUM_PALETTES_EXTRAS          87
+#define NUM_PALETTES_OTHERS            93
 #define NUM_PALETTES_TOTAL  (NUM_PALETTES_ESSENTIALS + NUM_PALETTES_SUBTLE + NUM_PALETTES_SINGLE_COLOR + NUM_PALETTES_MULTICOLOR + NUM_PALETTES_HARDWARE + NUM_PALETTES_NINTENDO_OFFICIAL + NUM_PALETTES_EXTRAS + NUM_PALETTES_OTHERS )
 
 //struct retro_core_option_value *palettes_default_opt_values      = NULL;

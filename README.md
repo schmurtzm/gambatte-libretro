@@ -6,12 +6,12 @@
 What is this new palettes organization ?
 --------------------------------
 
-The palettes organization of this Gambatte Core has been done to allow the user to navigate and choose his favorite palette in an easier way.
+The palettes organization of this Gambatte Core has been done by Jeltron to allow the user to navigate and choose his favorite palette in an easier way.
 
 Note that there are 2 branches with 2 different organization :
  - This current one is an organization by palette style (Essentials, Subtle, Single_Color, Multicolor, Hardware, Nintendo_Official, Extras, Others)
 
-- [The simple color organisation](https://github.com/schmurtzm/gambatte-libretro/tree/simple-color-organisation) is an organization of palettes by color (essentials, blue, brown, gray, green, inverted, multicolore, orange, pink, purple, red, yellow, others)
+- [The organisation by color](https://github.com/schmurtzm/gambatte-libretro/tree/simple-color-organisation) is an organization of palettes by color (essentials, blue, brown, gray, green, inverted, multicolore, orange, pink, purple, red, yellow, others)
 
 
 Why ?
