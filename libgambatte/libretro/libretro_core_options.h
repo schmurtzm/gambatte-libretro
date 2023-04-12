@@ -113,6 +113,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          //Essentials 
 
          { "GB-DMG",               NULL },            //GB
+         { "GB-Pocket",               NULL },
          { "Greenscale",         NULL },    //GB
          { "GB Studio", NULL },
          { "Arctic Green",               NULL   },  // similar to TI83
