@@ -2318,7 +2318,7 @@ PACK15_4(0x63FDFB, 0xEF58F7, 0x4344C1, 0x141439),
 PACK15_4(0x63FDFB, 0xEF58F7, 0x4344C1, 0x141439)
 };
 
-static const unsigned short GB-Pocket[] = {
+static const unsigned short GB_Pocket[] = {
 PACK15_4(0xC4D7CD, 0x85978C, 0x515F56, 0x0C1C23),
 PACK15_4(0xC4D7CD, 0x85978C, 0x515F56, 0x0C1C23),
 PACK15_4(0xC4D7CD, 0x85978C, 0x515F56, 0x0C1C23)
@@ -2837,7 +2837,7 @@ static const GbcPaletteEntry gbcDirPalettes[] = {
 	{ "Pac Palette",Pac_Palette },
 	{ "Idol World tricolor",Idol_World_tricolor },
 	{ "Tropical Starfall",Tropical_Starfall },
-	{ "GB-Pocket",GB-Pocket },
+	{ "GB-Pocket",GB_Pocket },
 
 
 	//////////////////////////////////////////////
